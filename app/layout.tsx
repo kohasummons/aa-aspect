@@ -35,10 +35,10 @@ const candaraItalic = localFont({
   variable: "--font-candara-italic",
 });
 
-const candaraLight = localFont({
-  src: "./fonts/Candara_Light.ttf",
-  variable: "--font-candara-light",
-});
+// const candaraLight = localFont({
+//   src: "./fonts/Candara_Light.ttf",
+//   variable: "--font-candara-light",
+// });
 
 const candara = localFont({
   src: "./fonts/Candara.ttf",
@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${candaraLight.variable} ${abadiExtraLight.variable} ${abadiProBold.variable} ${candaraBoldItalic.variable} ${candaraBold.variable} ${candaraItalic.variable} ${candara.variable} antialiased relative`}
+        className={`${inter.variable} ${abadiExtraLight.variable} ${abadiProBold.variable} ${candaraBoldItalic.variable} ${candaraBold.variable} ${candaraItalic.variable} ${candara.variable} antialiased relative`}
       >
           {children}
       </body>
