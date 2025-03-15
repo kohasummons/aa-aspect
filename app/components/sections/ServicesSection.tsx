@@ -30,7 +30,7 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        <div ref={cardsRef} className="flex flex-col md:flex-row items-center justify-center gap-3">
+        <div ref={cardsRef} className="flex flex-col xl:flex-row items-center justify-center gap-3">
           <div className="flex flex-col gap-3">
             <Link href="/services/project-management" className="service-card group">
               <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
@@ -55,7 +55,7 @@ const ServicesSection = () => {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-3 mt-40">
+          <div className="flex flex-col gap-3 lg:mt-40 mt-0">
             <Link href="/services/process-management" className="service-card group">
               <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
                 <ServiceCard

@@ -41,7 +41,7 @@ export const ServiceCard = ({
           alt="background" 
           width={250} 
           height={250}
-          className="w-[150px] h-[150px] md:w-[250px] md:h-[250px]" 
+          className="w-[150px] h-[150px] md:w-[250px] md:h-[250px] light" 
         />
       </div>
     </motion.div>

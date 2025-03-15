@@ -47,7 +47,7 @@ const PurposeSection = () => {
           ref={textRef}
           className="flex flex-col items-center"
         >
-          <h2 className="text-[45px] text-center font-abadi-extralight text-[#003840] mb-10">
+          <h2 className="text-[18px] sm:text-[30px] lg:text-[45px] text-center font-abadi-extralight text-[#003840] mb-10">
             <span className="font-bold">aa-aspect</span> purpose is to
             better the world with new  <br /> possibilities made real. By continuously
             co-creating <br /> and innovating with our partners,

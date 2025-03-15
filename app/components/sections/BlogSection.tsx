@@ -116,7 +116,7 @@ const BlogSection = () => {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4 md:gap-0">
+        <div className="flex flex-row justify-between items-start md:items-center mb-8 md:mb-12 gap-4 md:gap-0">
           <motion.div 
             className="flex items-center gap-6 w-full"
             initial={{ opacity: 0, x: -20 }}
@@ -127,7 +127,7 @@ const BlogSection = () => {
             <h2 className="text-4xl md:text-6xl font-candara-bold text-white whitespace-nowrap">
               Blogs
             </h2>
-            <div className="h-[3px] bg-white/20 w-full md:mr-12 hidden md:flex"></div>
+            <div className="h-[3px] bg-white/20 w-full md:mr-12 flex"></div>
           </motion.div>
           
           <div className="flex space-x-4">
