@@ -63,7 +63,7 @@ export function Header() {
       transition={{ duration: 0.3 }}
     >
       <div className="container mx-auto flex justify-between items-center relative">
-        <div className="flex items-center">
+        <div className="flex items-center w-full justify-between md:w-auto">
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.svg"
@@ -73,20 +73,19 @@ export function Header() {
               className="mr-2"
             />
           </Link>
-        </div>
 
-        {/* Hamburger Menu Button */}
-        <button 
-          className="md:hidden z-50 p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <div className="w-6 h-4 flex flex-col justify-between">
-            <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
-            <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "opacity-0" : ""}`} />
-            <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
-          </div>
-        </button>
+          <button 
+            className="md:hidden z-50 p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-4 flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
+              <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
+            </div>
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <motion.nav
