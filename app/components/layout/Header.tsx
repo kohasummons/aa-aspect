@@ -63,7 +63,7 @@ export function Header() {
       transition={{ duration: 0.3 }}
     >
       <div className="container mx-auto flex justify-between items-center relative">
-        <div className="flex items-center">
+        <div className="flex items-center w-full justify-between lg:w-auto">
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.svg"
@@ -73,24 +73,23 @@ export function Header() {
               className="mr-2"
             />
           </Link>
-        </div>
 
-        {/* Hamburger Menu Button */}
-        <button 
-          className="md:hidden z-50 p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <div className="w-6 h-4 flex flex-col justify-between">
-            <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
-            <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "opacity-0" : ""}`} />
-            <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
-          </div>
-        </button>
+          <button 
+            className="lg:hidden z-50 p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-4 flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "rotate-45 translate-y-1.5" : ""}`} />
+              <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`w-full h-0.5 bg-white transition-all ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} />
+            </div>
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <motion.nav
-          className={`md:hidden fixed inset-0 bg-[rgb(0,56,64)] pt-20 px-6 ${isMenuOpen ? "flex" : "hidden"}`}
+          className={`lg:hidden fixed inset-0 bg-[rgb(0,56,64)] pt-20 px-6 ${isMenuOpen ? "flex" : "hidden"}`}
           initial="closed"
           animate={isMenuOpen ? "open" : "closed"}
           variants={{
@@ -187,7 +186,7 @@ export function Header() {
         </motion.nav>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden lg:flex space-x-8">
           <Link 
             href="/" 
             className={`text-white relative group transition-all duration-300 hover:scale-105 px-4 py-2 ${
@@ -312,7 +311,7 @@ export function Header() {
 
         {/* Desktop CTA Button - updated to show only on desktop */}
         <Link href="/contact-us">
-          <button className="hidden md:block px-4 py-2 bg-teal-700 text-white border-teal-600 hover:bg-teal-600 cursor-pointer">
+          <button className="hidden lg:block px-4 py-2 bg-teal-700 text-white border-teal-600 hover:bg-teal-600 cursor-pointer">
             GET IN TOUCH
           </button>
         </Link>

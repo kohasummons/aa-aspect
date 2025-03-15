@@ -98,15 +98,14 @@ const TrustedBySection = () => {
   return (
     <section ref={sectionRef} className="relative  pt-20 pb-40">
       <div className="container mx-auto px-4 md:px-6 flex flex-col">
-        <div ref={titleRef} className="text-center mb-16">
-        <h2 className="text-2xl md:text-4xl text-center font-candara-exralight text-black mb-4 md:mb-4">
+        <div ref={titleRef} className="text-center mb-12">
+        <h2 className="text-2xl md:text-4xl text-center font-candara-exralight text-black md:mb-4">
             The Companies we empower
           </h2>
         </div>
 
-        <div ref={logosRef} className="md:w-9/12 w-full mx-auto">
-          {/* First Row */}
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 mb-12">
+        <div ref={logosRef} className="w-full mx-auto">
+          <div className="flex flex-wrap justify-center gap-x-1 gap-y-8 md:gap-20 mb-12">
             {customers.slice(0, 5).map((customer) => {
               const IconComponent = customer.icon;
               return (
@@ -115,11 +114,11 @@ const TrustedBySection = () => {
                   href={customer.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="company-logo flex items-center justify-center group hover:opacity-80 transition-opacity"
+                  className="company-logo flex items-center justify-center group hover:opacity-80 transition-opacity w-[30%] md:w-auto"
                 >
-                  <div className="flex items-center space-x-3">
-                    <IconComponent className="w-10 h-10 text-black" />
-                    <span className="text-black text-2xl font-abadi-regular">
+                  <div className="flex items-center space-x-4 md:space-x-3">
+                    <IconComponent className="w-6 h-6 md:w-10 md:h-10 text-black" />
+                    <span className="text-black text-xl md:text-2xl font-abadi-regular">
                       {customer.name}
                     </span>
                   </div>
