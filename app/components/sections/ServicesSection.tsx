@@ -1,64 +1,105 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { ServiceCard } from "../ui/SectionCards";
 
 const ServicesSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const cards = gsap.utils.toArray<HTMLElement>('.service-card');
+    
+    cards.forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom-=100",
+          end: "top center",
+          scrub: 1
+        },
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        delay: i * 0.2
+      });
+    });
+
+  }, []);
+
   return (
-    <section className="bg-black py-20">
+    <section ref={sectionRef} className="bg-black py-10 md:py-20 px-4 md:px-6">
       <div className="container mx-auto">
         <motion.div
-          className="mb-12"
+          className="mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-6xl text-center font-candara-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl text-center font-candara-bold text-white mb-4 md:mb-6">
             Our Services
           </h2>
-          <p className="text-white text-2xl text-center mx-auto font-abadi-extralight max-w-3xl">
+          <p className="text-white text-xl md:text-2xl text-center mx-auto font-abadi-extralight max-w-3xl px-4">
             We specialize in traditional methodologies while also having
             comprehensive expertise in agile methodologies. We ensure full
             compliance with industry standards.
           </p>
         </motion.div>
 
-        <div className="flex items-center justify-center gap-3">
+        <div ref={cardsRef} className="flex flex-col md:flex-row items-center justify-center gap-3">
           <div className="flex flex-col gap-3">
-            <ServiceCard
-              title="Project Management"
-              description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
-              number="01"
-              image="/images/process-management.svg"
-              link="/services/project-management"
-            />
+            <Link href="/services/project-management" className="service-card group">
+              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+                <ServiceCard
+                  title="Project Management"
+                  description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
+                  number="01"
+                  image="/images/process-management.svg"
+                />
+              </div>
+            </Link>
 
-            <ServiceCard
-              title="Quality Management"
-              description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
-              number="02"
-              image="/images/product-management.svg"
-              link="/services/quality-management"
-            />
+            <Link href="/services/quality-management" className="service-card group">
+              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+                <ServiceCard
+                  title="Quality Management"
+                  description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
+                  number="02"
+                  image="/images/product-management.svg"
+                />
+              </div>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-3 mt-40">
-            <ServiceCard
-              title="Process Management"
-              description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
-              number="03"
-              image="/images/project-management.svg"
-              link="/services/process-management"
-            />
+            <Link href="/services/process-management" className="service-card group">
+              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+                <ServiceCard
+                  title="Process Management"
+                  description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
+                  number="03"
+                  image="/images/project-management.svg"
+                />
+              </div>
+            </Link>
 
-            <ServiceCard
-              title="Product Management"
-              description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
-              number="04"
-              image="/images/quality-management.svg"
-              link="/services/product-management"
-            />
+            <Link href="/services/product-management" className="service-card group">
+              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+                <ServiceCard
+                  title="Product Management"
+                  description="We recognize that every project and client is unique. Therefore, we take a flexible approach to project management."
+                  number="04"
+                  image="/images/quality-management.svg"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

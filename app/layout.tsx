@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-
+import { RootProvider } from "./components/providers/RootProvider";
 import "./globals.css";
+import Layout from "./components/Layout";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,15 +54,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
         className={`${inter.variable} ${abadiExtraLight.variable} ${abadiProBold.variable} ${candaraBoldItalic.variable} ${candaraBold.variable} ${candaraItalic.variable} ${candara.variable} antialiased relative`}
       >
-          {children}
+        <RootProvider>
+          <Layout>{children}</Layout>
+        </RootProvider>
       </body>
     </html>
   );
