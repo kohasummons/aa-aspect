@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import {useRef } from "react";
 import { motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { ServiceCard } from "../ui/SectionCards";
 
@@ -11,27 +9,6 @@ const ServicesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const cards = gsap.utils.toArray<HTMLElement>('.service-card');
-    
-    cards.forEach((card, i) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom-=100",
-          end: "top center",
-          scrub: 1
-        },
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        delay: i * 0.2
-      });
-    });
-
-  }, []);
 
   return (
     <section ref={sectionRef} className="bg-black py-10 md:py-20 px-4 md:px-6">
