@@ -35,17 +35,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-white pt-10 md:pt-20 pb-6 md:pb-10 relative overflow-hidden px-4 md:px-6">
       {/* Background pattern */}
       <div className="absolute right-0 top-0 opacity-40">
         <Image src={FadedElementSVG} alt="background effect" />
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-10 md:mb-16">
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-candara-bold text-[#003840] mb-4">
+            <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               Contacts Us
             </h3>
             <p className="text-[#003840] mb-2">+44 (0) 790 812 22811</p>
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Business Hours */}
           <div>
-            <h3 className="text-xl font-candara-bold text-[#003840] mb-4">
+            <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               Business hours
             </h3>
             <p className="text-[#003840] mb-2">Monday — Friday</p>
@@ -63,7 +63,7 @@ const Footer = () => {
 
           {/* Office Address */}
           <div>
-            <h3 className="text-xl font-candara-bold text-[#003840] mb-4">
+            <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               REGISTERED OFFICE ADDRESS
             </h3>
             <p className="text-[#003840] mb-2">50 Princess St.</p>
@@ -73,7 +73,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-xl font-candara-bold text-[#003840] mb-4">
+            <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               Socials
             </h3>
             <Link
@@ -97,18 +97,18 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="md:col-span-4">
-            <h3 className="text-xl font-candara-bold text-[#003840] mb-4">
+          <div className="col-span-1 sm:col-span-2 md:col-span-4">
+            <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               NEWSLETTER
             </h3>
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col md:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4"
             >
               <input
                 type="text"
                 placeholder="First Name"
-                className="bg-gray-100 p-4 flex-1"
+                className="bg-gray-100 p-3 md:p-4 flex-1"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
@@ -116,14 +116,14 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="bg-gray-100 p-4 flex-1"
+                className="bg-gray-100 p-3 md:p-4 flex-1"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <button
                 type="submit"
-                className="bg-[#003840] text-white px-8 py-4 flex items-center justify-center"
+                className="bg-[#003840] text-white px-6 md:px-8 py-3 md:py-4 flex items-center justify-center"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -132,9 +132,7 @@ const Footer = () => {
                   <>
                     Sign me up
                     <svg
-                      className="ml-2"
-                      width="24"
-                      height="24"
+                      className="ml-2 w-5 h-5 md:w-6 md:h-6"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +153,7 @@ const Footer = () => {
         </div>
 
         {/* Logo */}
-        <div className="flex justify-center mt-20">
+        <div className="flex justify-center mt-10 md:mt-20">
           <Image
             src="/images/footer-logo.svg"
             alt="aa aspect logo"
