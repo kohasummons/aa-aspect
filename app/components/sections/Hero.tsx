@@ -19,14 +19,14 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
-    <section ref={sectionRef} className="text-white h-[40dvh] sm:h-[50dvh] md:h-[80dvh] lg:h-[111dvh] relative">
-      <div className="absolute bg-[url(/images/hero-image.jpg)] bg-cover bg-center top-0 bottom-0 inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60 light" />
+    <section ref={sectionRef} className="text-white h-[60vh] md:h-[120vh] xl:h-[111vh] relative">
+      <div className="absolute bg-[url(/images/hero-image.jpg)] bg-cover bg-center top-0 bottom-0 inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
       
       <div className="container mx-auto relative flex flex-col gap-20 md:gap-80 px-4 md:px-6">
         <motion.div
           ref={textRef1}
           style={{ y: y1, opacity }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl mb-4 md:mb-8 pt-[150px] md:pt-[200px] font-candara-bold"
+          className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl mb-4 md:mb-8 pt-[150px] md:pt-[200px] font-candara-bold"
         >
           MAKING INNOVATION
           <br />
@@ -36,7 +36,7 @@ export function Hero() {
         <motion.div
           ref={textRef2}
           style={{ y: y2, opacity }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl  text-right font-candara-bold"
+          className="text-3xl sm:text-4xl md:text-7xl lg:text-9xl text-right font-candara-bold"
         >
           DELIVERING
           <br />
