@@ -158,14 +158,14 @@ export function Header() {
                     Quality Management
                   </Link>
                   <Link
-                    href="/services/product-management"
+                    href="/services/fmea-coaching"
                     className="block text-white text-lg hover:text-teal-400 transition-colors"
                     onClick={() => {
                       setIsMobileServicesOpen(false);
                       setIsMenuOpen(false);
                     }}
                   >
-                    Product Management
+                    FMEA Coaching
                   </Link>
                 </div>
               </motion.div>
@@ -174,8 +174,8 @@ export function Header() {
             <Link href="/contact-us" className="text-white text-xl" onClick={() => setIsMenuOpen(false)}>
               CONTACT US
             </Link>
-            <Link href="/blogs" className="text-white text-xl" onClick={() => setIsMenuOpen(false)}>
-              BLOGS
+            <Link href="/news" className="text-white text-xl" onClick={() => setIsMenuOpen(false)}>
+              NEWS
             </Link>
             <Link href="/contact-us" onClick={() => setIsMenuOpen(false)}>
               <button className="px-4 py-2 bg-teal-700 text-white border-teal-600 hover:bg-teal-600 cursor-pointer w-full">
@@ -266,11 +266,11 @@ export function Header() {
                   Quality Management
                 </Link>
                 <Link
-                  href="/services/product-management"
+                  href="/services/fmea-coaching"
                   className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
                   onClick={() => setIsServicesOpen(false)}
                 >
-                  Product Management
+                  FMEA Coaching
                 </Link>
               </motion.div>
             )}
@@ -292,18 +292,18 @@ export function Header() {
             </span>
           </Link>
           <Link 
-            href="/blogs"
+            href="/news"
             className={`text-white relative group transition-all duration-300 hover:scale-105 px-4 py-2 ${
-              isActivePath('/blogs') ? 'glow-active' : ''
+              isActivePath('/news') ? 'glow-active' : ''
             }`}
           >
             <span className="relative inline-block">
-              BLOGS
+              NEWS
               <span className={`absolute inset-0 rounded-sm -m-[2px] ${
-                isActivePath('/blogs') ? 'border-white/100' : ''
+                isActivePath('/news') ? 'border-white/100' : ''
               } group-hover:border-white/100 transition-all duration-300`} />
               <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#14b8a6] transform origin-left transition-all duration-300 
-                  ${isActivePath('/blogs') ? 'scale-x-100 shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]' : 'scale-x-0'} 
+                  ${isActivePath('/news') ? 'scale-x-100 shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]' : 'scale-x-0'} 
                   group-hover:scale-x-100 group-hover:shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]`} />
             </span>
           </Link>

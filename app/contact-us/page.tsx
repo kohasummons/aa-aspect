@@ -34,7 +34,7 @@ export default function Contact() {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative h-[40vh] flex items-center">
-          <div className="absolute inset-0 bg-[url(/images/blog-image.jpg)] bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
+          <div className="absolute inset-0 bg-[url(/images/news-image.jpg)] bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
           <div className="relative z-10 w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <motion.h1 

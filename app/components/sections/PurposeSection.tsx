@@ -10,7 +10,7 @@ const PurposeSection = () => {
   const bgRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className="relative py-[187px] overflow-hidden">
+    <section ref={sectionRef} className="relative md:py-[187px] py-20 overflow-hidden">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -25,7 +25,7 @@ const PurposeSection = () => {
             viewBox="0 0 192 139"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-[646px] h-full"
+            className="md:w-[646px] w-[400px] h-full"
           >
             <path
               fillRule="evenodd"

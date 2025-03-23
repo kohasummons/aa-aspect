@@ -3,8 +3,8 @@ import ServiceTemplate from "@/app/components/templates/ServiceTemplate";
 export default function ProductManagement() {
   return (
     <ServiceTemplate
-      title="Product Management"
-      description="Our product management services help you develop and maintain successful products throughout their lifecycle, from conception to market launch and beyond."
+      title="FMEA Coaching"
+      description="Our coaching services help you develop and maintain successful products throughout their lifecycle, from conception to market launch and beyond."
       image="/images/project.jpg"
       features={[
         "Product strategy development",

@@ -1,39 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FadedElementSVG from "../../../public/images/faded-element.svg";
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Here you would typically send the data to your newsletter API
-    // For example:
-    // await fetch('/api/newsletter', {
-    //   method: 'POST',
-    //   body: JSON.stringify({ email, firstName }),
-    //   headers: { 'Content-Type': 'application/json' }
-    // });
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Reset form
-    setEmail("");
-    setFirstName("");
-    setIsSubmitting(false);
-
-    // Show success message (you could use a toast notification here)
-    alert("Thank you for subscribing!");
-  };
-
   return (
     <footer className="bg-white pt-10 md:pt-20 pb-6 md:pb-10 relative overflow-hidden px-4 md:px-6">
       {/* Background pattern */}
@@ -77,78 +48,11 @@ const Footer = () => {
               Socials
             </h3>
             <Link
-              href="https://twitter.com/aaaspect"
-              className="block text-[#003840] mb-2 hover:underline"
-            >
-              X
-            </Link>
-            <Link
               href="https://linkedin.com/company/aaaspect"
               className="block text-[#003840] mb-2 hover:underline"
             >
               LINKEDIN
             </Link>
-            <Link
-              href="https://facebook.com/aaaspect"
-              className="block text-[#003840] hover:underline"
-            >
-              FACEBOOK
-            </Link>
-          </div>
-
-          {/* Newsletter */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-4">
-            <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
-              NEWSLETTER
-            </h3>
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-3 md:gap-4"
-            >
-              <input
-                type="text"
-                placeholder="First Name"
-                className="bg-gray-100 p-3 md:p-4 flex-1"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="bg-gray-100 p-3 md:p-4 flex-1"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button
-                type="submit"
-                className="bg-[#003840] text-white px-6 md:px-8 py-3 md:py-4 flex items-center justify-center"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  "Submitting..."
-                ) : (
-                  <>
-                    Sign me up
-                    <svg
-                      className="ml-2 w-5 h-5 md:w-6 md:h-6"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 12H19M19 12L12 5M19 12L12 19"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </>
-                )}
-              </button>
-            </form>
           </div>
         </div>
 
@@ -159,7 +63,7 @@ const Footer = () => {
             alt="aa aspect logo"
             width={1400}
             height={200}
-            className="w-full"
+            className="w-full opacity-5 -mb-60"
           />
         </div>
       </div>
