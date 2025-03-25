@@ -201,9 +201,8 @@ export default function News() {
                 <motion.div
                   key={post.id}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
                   <Link href={`/news/${post.slug}`} className="block group">
                     <div className="relative aspect-w-16 aspect-h-9 mb-4">

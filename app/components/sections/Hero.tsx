@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
 
 export function Hero() {
   const sectionRef = useRef(null);
   const textRef1 = useRef(null);
-  // const textRef2 = useRef(null);
   const footerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -15,7 +15,6 @@ export function Hero() {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  // const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
@@ -33,18 +32,17 @@ export function Hero() {
           COLLABORATIVE
         </motion.div>
         <motion.div className="text-center text-base md:text-lg text-white/70 mx-auto md:w-1/4">
-          We deliver exception projects to outstanding clients with not crumbs left untouched.
-        </motion.div>
+          We deliver exceptional project that streamline processes, and drive sustainable growth to outstanding clients.
+         </motion.div>
         <div className="flex justify-center">
-          <button className="px-4 py-2 bg-teal-700 text-white hover:bg-teal-600 cursor-pointer mt-8">
+          <Link href="/contact-us" className="px-4 py-2 md:px-8 md:py-4 bg-[#003840] text-white cursor-pointer mt-8 hover:bg-[#004e5a] transition-colors">
             GET IN TOUCH
-          </button>
+          </Link>
         </div>
       </div>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
         ref={footerRef}
         className="border-t border-t-white relative mt-10 md:mt-20 hidden md:block"

@@ -178,7 +178,7 @@ export function Header() {
               NEWS
             </Link>
             <Link href="/contact-us" onClick={() => setIsMenuOpen(false)}>
-              <button className="px-4 py-2 bg-teal-700 text-white border-teal-600 hover:bg-teal-600 cursor-pointer w-full">
+              <button className="px-4 py-2 bg-[#003840] text-white cursor-pointer w-full">
                 GET IN TOUCH
               </button>
             </Link>
@@ -311,7 +311,7 @@ export function Header() {
 
         {/* Desktop CTA Button - updated to show only on desktop */}
         <Link href="/contact-us">
-          <button className="hidden lg:block px-4 py-2 bg-teal-700 text-white border-teal-600 hover:bg-teal-600 cursor-pointer">
+          <button className="hidden lg:block px-4 py-2 bg-[#003840] text-white cursor-pointer">
             GET IN TOUCH
           </button>
         </Link>

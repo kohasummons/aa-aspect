@@ -64,8 +64,7 @@ export default function Contact() {
               {/* Contact Form */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 className="bg-white p-6 rounded-lg shadow-lg"
               >
@@ -136,13 +135,7 @@ export default function Contact() {
               </motion.div>
 
               {/* Contact Information */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-8"
-              >
+              <div className="space-y-8">
                 <div>
                   <h2 className="text-2xl font-candara-bold text-[#003840] mb-6">Get in Touch</h2>
                   <div className="space-y-4">
@@ -168,7 +161,7 @@ export default function Contact() {
                     <p>08:00 - 17:00</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

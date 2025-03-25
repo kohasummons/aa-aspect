@@ -1,4 +1,4 @@
-import ServiceTemplate from "@/app/components/templates/ServiceTemplate";
+import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
 
 export default function ProjectManagement() {
   return (

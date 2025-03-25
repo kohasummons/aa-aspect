@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { RootProvider } from "./components/providers/RootProvider";
+import Script from "next/script";
 import "./globals.css";
-import Layout from "./components/Layout";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,18 +36,13 @@ const candaraItalic = localFont({
   variable: "--font-candara-italic",
 });
 
-// const candaraLight = localFont({
-//   src: "./fonts/Candara_Light.ttf",
-//   variable: "--font-candara-light",
-// });
-
 const candara = localFont({
   src: "./fonts/Candara.ttf",
   variable: "--font-candara",
 });
 
 export const metadata: Metadata = {
-  title: "AA Aspect ltd | Your Innovative Solution Partner",
+  title: "aa aspect Limited | Your Innovative Solution Partner",
   description:
     "Dedicated to delivering innovative solutions that streamline processes, enhance productivity, and drive sustainable growth",
 };
@@ -65,8 +60,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${abadiExtraLight.variable} ${abadiProBold.variable} ${candaraBoldItalic.variable} ${candaraBold.variable} ${candaraItalic.variable} ${candara.variable} antialiased relative`}
       >
+        <Script src="https://cdn.lordicon.com/lordicon.js" strategy="beforeInteractive" />
         <RootProvider>
-          <Layout>{children}</Layout>
+          {children}
         </RootProvider>
       </body>
     </html>

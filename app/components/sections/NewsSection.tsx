@@ -59,21 +59,20 @@ const NewsCard = ({ post }: { post: NewsPost }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
     >
       <Link href={`/news/${post.slug}`} className="block">
         <div className="relative overflow-hidden">
           <Image
             src={post.image}
             alt={post.title}
-            width={400}
-            height={300}
-            className="object-cover w-full h-[300px] transition-transform duration-300 hover:scale-105"
+            width={300}
+            height={200}
+            className="object-cover w-full h-[200px] transition-transform duration-300 hover:scale-105"
           />
         </div>
         <div className="mt-4">
-          <p className="text-white text-sm mb-2">{post.date}</p>
-          <h3 className="text-white text-2xl font-candara-bold">{post.title}</h3>
+          <p className="text-white text-xs mb-2">{post.date}</p>
+          <h3 className="text-white text-xl font-candara-bold">{post.title}</h3>
         </div>
       </Link>
     </motion.div>
@@ -109,7 +108,7 @@ const NewsSection = () => {
   };
 
   return (
-    <section className="bg-[#003840] py-10 md:py-20 relative overflow-hidden px-4 md:px-6">
+    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden  px-4 md:px-6">
       {/* Background pattern */}
       <div className="absolute right-0 top-0 opacity-40">
         <Image src={FadedElementSVG} alt="background effect"/>
@@ -133,7 +132,7 @@ const NewsSection = () => {
           <div className="flex space-x-4">
             <button 
               onClick={handlePrev}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white flex items-center justify-center text-white"
+              className="cursor-pointer w-12 h-12 md:w-14 md:h-14 rounded-full border border-white flex items-center justify-center text-white hover:bg-[#003840] hover:border-[#3c6e76] transition-colors"
               disabled={currentIndex === 0}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +142,7 @@ const NewsSection = () => {
             
             <button 
               onClick={handleNext}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white flex items-center justify-center text-white"
+              className="cursor-pointer w-12 h-12 md:w-14 md:h-14 rounded-full border border-white flex items-center justify-center text-white hover:bg-[#003840] hover:border-[#3c6e76] transition-colors"
               disabled={currentIndex === newsPosts.length - 1}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +154,7 @@ const NewsSection = () => {
         
         <div 
           ref={sliderRef}
-          className="flex overflow-x-auto scrollbar-hide -mx-4 md:mx-0 px-4 md:px-0"
+          className="flex overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 md:mx-0 px-4 md:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {newsPosts.map((post) => (

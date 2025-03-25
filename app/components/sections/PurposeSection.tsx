@@ -7,18 +7,11 @@ import Link from "next/link";
 const PurposeSection = () => {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
-  const bgRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className="relative md:py-[187px] py-20 overflow-hidden">
-      <motion.div
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
+    <section ref={sectionRef} className="relative md:py-[100px] py-20 overflow-hidden">
         {/* Background AA SVG */}
-        <div ref={bgRef} className="absolute right-0 -bottom-4/12 z-0">
+        <div className="absolute right-0 -bottom-4/12 z-0">
           <svg
             width="192"
             height="139"
@@ -35,26 +28,25 @@ const PurposeSection = () => {
             />
           </svg>
         </div>
-      </motion.div>
 
       {/* Content */}
       <div className="container mx-auto relative">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           ref={textRef}
           className="flex flex-col items-center"
         >
-          <h2 className="text-[18px] sm:text-[30px] lg:text-[45px] text-center font-abadi-extralight text-[#003840] mb-10">
+          <h2 className="text-[19px] sm:text-[20px] lg:text-[35px] text-center font-abadi-extralight text-[#003840] mb-5 md:mb-10">
             <span className="font-bold">aa-aspect</span> purpose is to
             better the world with new  <br /> possibilities made real. By continuously
             co-creating <br /> and innovating with our partners,
           </h2>
           
           <Link href="/about">
-            <button className="bg-[#003840] text-white px-8 py-4 font-candara-bold hover:bg-[#004a54] transition-colors">
+            <button className="bg-[#003840] text-white md:px-8 px-4 py-2 md:py-4 font-candara-bold hover:bg-[#004a54] transition-colors">
               LEARN MORE
             </button>
           </Link>

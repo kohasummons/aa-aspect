@@ -14,22 +14,22 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What services does Aspect provide?",
+    question: "What services does aa aspect provide?",
     answer:
-      "Aspect specializes in project management, process management, quality management, and FMEA coaching services. We offer tailored solutions to help businesses streamline their operations and achieve their goals efficiently.",
+      "aa aspect specializes in project management, process management, quality management, and FMEA coaching services. We offer tailored solutions to help businesses streamline their operations and achieve their goals efficiently.",
   },
   {
-    question: "How does Aspect ensure project success?",
+    question: "How does aa aspect ensure project success?",
     answer:
       "We employ a comprehensive approach combining experienced professionals, proven methodologies, and cutting-edge tools. Our team maintains constant communication and provides regular updates to ensure transparency and timely delivery.",
   },
   {
-    question: "Can Aspect work with businesses of any size?",
+    question: "Can aa aspect work with businesses of any size?",
     answer:
       "Yes, we work with businesses of all sizes, from startups to large enterprises. Our solutions are scalable and customized to meet the specific needs and requirements of each client.",
   },
   {
-    question: "What makes Aspect different from other consulting firms?",
+    question: "What makes aa aspect different from other consulting firms?",
     answer:
       "Our unique combination of industry expertise, innovative approaches, and commitment to client success sets us apart. We focus on building long-term partnerships and delivering measurable results rather than just short-term solutions.",
   },
@@ -89,7 +89,6 @@ const FAQAccordion = ({
 
 export default function About() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  // const bgRef = useRef<HTMLDivElement>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -111,7 +110,7 @@ export default function About() {
                 transition={{ duration: 0.6 }}
                 className="text-4xl font-candara-bold text-white sm:text-5xl md:text-6xl"
               >
-                About Aspect
+                About aa-aspect
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -130,13 +129,7 @@ export default function About() {
           <div className="max-w-7xl mx-auto">
             <div className="mt-16">
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="relative"
-                >
+                <div className="relative">
                   <div className="aspect-w-16 aspect-h-9">
                     <Image
                       src="/images/news-image.jpg"
@@ -146,25 +139,19 @@ export default function About() {
                       priority
                     />
                   </div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="flex flex-col justify-center"
-                >
+                </div>
+                <div className="flex flex-col justify-center">
                   <h2 className="text-3xl font-candara-bold text-[#003840]">
                     Our Mission
                   </h2>
                   <p className="mt-4 text-lg text-gray-600 font-abadi-extralight">
-                    At Aspect, we&apos;re dedicated to revolutionizing the gig
+                    At aa aspect, we&apos;re dedicated to revolutionizing the gig
                     economy by creating meaningful connections between talented
                     professionals and innovative projects. Our platform empowers
                     both freelancers and businesses to achieve their goals
                     through seamless collaboration.
                   </p>
-                </motion.div>
+                </div>
               </div>
             </div>
 
