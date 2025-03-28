@@ -75,7 +75,7 @@ export function Header() {
           </Link>
 
           <button 
-            className="lg:hidden z-50 p-2"
+            className="lg:hidden z-50 p-2 rounded-full"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -244,12 +244,19 @@ export function Header() {
                 exit={{ opacity: 0, y: -10 }}
                 className="absolute top-full left-0 mt-2 w-64 bg-[#003840] rounded-md shadow-lg py-2"
               >
+                  <Link
+                  href="/services/quality-management"
+                  className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
+                  onClick={() => setIsServicesOpen(false)}
+                >
+                  Quality
+                </Link>
                 <Link
                   href="/services/project-management"
                   className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
                   onClick={() => setIsServicesOpen(false)}
                 >
-                  Project Management
+                  Project & Product
                 </Link>
                 <Link
                   href="/services/process-management"
@@ -257,13 +264,6 @@ export function Header() {
                   onClick={() => setIsServicesOpen(false)}
                 >
                   Process Management
-                </Link>
-                <Link
-                  href="/services/quality-management"
-                  className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
-                  onClick={() => setIsServicesOpen(false)}
-                >
-                  Quality Management
                 </Link>
                 <Link
                   href="/services/fmea-coaching"
@@ -275,22 +275,6 @@ export function Header() {
               </motion.div>
             )}
           </div>
-          <Link
-            href="/contact-us"
-            className={`text-white relative group transition-all duration-300 hover:scale-105 px-4 py-2 ${
-              isActivePath('/contact-us') ? 'glow-active' : ''
-            }`}
-          >
-            <span className="relative inline-block">
-              CONTACT US
-              <span className={`absolute inset-0 rounded-sm -m-[2px] ${
-                isActivePath('/contact-us') ? 'border-white/100' : ''
-              } group-hover:border-white/100 transition-all duration-300`} />
-              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#14b8a6] transform origin-left transition-all duration-300 
-                  ${isActivePath('/contact-us') ? 'scale-x-100 shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]' : 'scale-x-0'} 
-                  group-hover:scale-x-100 group-hover:shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]`} />
-            </span>
-          </Link>
           <Link 
             href="/news"
             className={`text-white relative group transition-all duration-300 hover:scale-105 px-4 py-2 ${
@@ -307,14 +291,31 @@ export function Header() {
                   group-hover:scale-x-100 group-hover:shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]`} />
             </span>
           </Link>
+          <Link
+            href="/contact-us"
+            className={`text-white relative group transition-all duration-300 hover:scale-105 px-4 py-2 ${
+              isActivePath('/contact-us') ? 'glow-active' : ''
+            }`}
+          >
+            <span className="relative inline-block">
+              CONTACT US
+              <span className={`absolute inset-0 rounded-sm -m-[2px] ${
+                isActivePath('/contact-us') ? 'border-white/100' : ''
+              } group-hover:border-white/100 transition-all duration-300`} />
+              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#14b8a6] transform origin-left transition-all duration-300 
+                  ${isActivePath('/contact-us') ? 'scale-x-100 shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]' : 'scale-x-0'} 
+                  group-hover:scale-x-100 group-hover:shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]`} />
+            </span>
+          </Link>
+         
         </nav>
 
         {/* Desktop CTA Button - updated to show only on desktop */}
-        <Link href="/contact-us">
-          <button className="hidden lg:block px-4 py-2 bg-[#003840] text-white cursor-pointer">
+        <Link href="/contact-us" className="hidden lg:block px-8 py-3 bg-[#003840] text-white cursor-pointer rounded-full relative group transition-all duration-300 scale-105 hover:scale-110">
             GET IN TOUCH
-          </button>
-        </Link>
+            <span className="absolute inset-0 rounded-full -m-[2px] transition-all duration-300" />
+            <span className="absolute inset-0 rounded-full bg-[#003840] opacity-30 transform origin-center transition-all duration-300 scale-105 shadow-[0_0_30px_8px_rgba(20,184,166,0.95)] group-hover:opacity-40 group-hover:shadow-[0_0_40px_12px_rgba(20,184,166,0.5)]" />
+          </Link>
       </div>
     </motion.header>
   );

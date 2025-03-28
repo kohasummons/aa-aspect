@@ -8,6 +8,7 @@ interface CardProps {
   description: string;
   imageURL?: string;
   link?: string;
+  imageComponent?: React.ReactElement;
 }
 
 export const ServiceCard = ({ title, description, imageURL }: CardProps) => {
@@ -20,8 +21,8 @@ export const ServiceCard = ({ title, description, imageURL }: CardProps) => {
       viewport={{ once: true }}
     >
       <div className="flex flex-col items-center h-full">
-        <div className="mb-4 md:mb-6 text-center">
-          <h3 className="text-3xl md:text-2xl font-candara-bold">{title}</h3>
+        <div className="mb-4 md:mb-6 text-center ">
+          <h3 className="text-3xl md:text-2xl font-candara-bold mb-2 mt-4">{title}</h3>
           <p className="font-candara-light text-sm opacity-80">{description}</p>
         </div>
       </div>

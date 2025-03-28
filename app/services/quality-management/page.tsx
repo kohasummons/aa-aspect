@@ -1,11 +1,12 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
+import qualitymgt1 from "@/public/images/processmgt5.png";
 
 export default function QualityManagement() {
   return (
     <ServiceTemplate
       title="Quality Management"
       description="Our quality management services focus on optimizing your operational workflows, improving efficiency, and ensuring consistent quality across all business processes."
-     image="/images/project.jpg"
+      image="/images/project.jpg"
       features={[
         "Business process analysis and optimization",
         "Workflow automation solutions",
@@ -21,7 +22,6 @@ export default function QualityManagement() {
         "Improved quality consistency",
         "Enhanced process visibility",
         "Better compliance management"
-      ]}
-    />
+      ]} backgroundImage={qualitymgt1.src}    />
   );
 } 

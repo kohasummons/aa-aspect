@@ -11,15 +11,21 @@ interface ServiceTemplateProps {
   image: string;
   features: string[];
   benefits: string[];
+  backgroundImage: string;
 }
 
-const ServiceTemplate = ({ title, description, image, features, benefits }: ServiceTemplateProps) => {
+const ServiceTemplate = ({ title, description, image, features, benefits, backgroundImage }: ServiceTemplateProps) => {
 
   return (
     <>
       <Header />
       <main className="">
-        <section className="bg-[#003840] py-40">
+        <section 
+          className="relative py-40 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 56, 64, 0.85), rgba(0, 56, 64, 0.85)), url("${backgroundImage}")`
+          }}
+        >
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

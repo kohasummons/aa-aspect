@@ -49,16 +49,15 @@ const FAQAccordion = ({
   return (
     <div className="border-b border-gray-200">
       <button
-        className="w-full py-6 flex justify-between items-center text-left"
+        className="w-full py-6 flex justify-between items-center text-left rounded-full"
         onClick={onClick}
       >
         <span className="text-lg font-candara-bold text-[#003840]">
           {question}
         </span>
         <span
-          className={`ml-6 flex-shrink-0 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`ml-6 flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+            }`}
         >
           <svg
             className="h-6 w-6 text-[#003840]"
@@ -100,7 +99,7 @@ export default function About() {
       <div className="min-h-screen">
         {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center">
-          <div className="absolute inset-0 bg-[url(/images/news-image.jpg)] bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
+          <div className="absolute inset-0 bg-[url(/images/about1.png)] bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
 
           <div className="relative z-10 w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -110,7 +109,7 @@ export default function About() {
                 transition={{ duration: 0.6 }}
                 className="text-4xl font-candara-bold text-white sm:text-5xl md:text-6xl"
               >
-                About aa-aspect
+               About
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -132,7 +131,7 @@ export default function About() {
                 <div className="relative">
                   <div className="aspect-w-16 aspect-h-9">
                     <Image
-                      src="/images/news-image.jpg"
+                      src="/images/about2.png"
                       alt="Team collaboration"
                       fill
                       className="object-cover rounded-lg shadow-lg"
@@ -142,20 +141,46 @@ export default function About() {
                 </div>
                 <div className="flex flex-col justify-center">
                   <h2 className="text-3xl font-candara-bold text-[#003840]">
-                    Our Mission
+                    About Us
                   </h2>
                   <p className="mt-4 text-lg text-gray-600 font-abadi-extralight">
-                    At aa aspect, we&apos;re dedicated to revolutionizing the gig
-                    economy by creating meaningful connections between talented
-                    professionals and innovative projects. Our platform empowers
-                    both freelancers and businesses to achieve their goals
-                    through seamless collaboration.
+                    Unlock the full potential of your business with our expertly crafted solutions tailored to meet your unique needs. With over 20 years of industry experience, our team of seasoned professionals specializes in IT, product development, automotive, and logistics and supply chain management. <br />
+
+                    At the heart of our service is a commitment to strategic thinking and dynamic problem-solving. We understand that no two challenges are alike, which is why we take pride in our agile approach. From initial consultation to project completion, we customize our strategies to align perfectly with your objectives, ensuring that we not only meet but exceed your expectations. <br /> <br />
+
+                    Our dedication to excellence is evident in every phase of the project — from brainstorming innovative ideas to executing flawless implementations. Trust in a partnership where your goals are our priority, and witness how our tailored services can drive success and efficiency within your organization. <br />
+
+                    Choose our experienced team for a collaborative experience where dedication meets expertise. Let us help you navigate the complexities of your industry and achieve remarkable results together!  
                   </p>
                 </div>
               </div>
             </div>
+            <div className="flex mt-40">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                
+                <div className="flex flex-col justify-center">
+                  <h2 className="text-3xl font-candara-bold text-[#003840]">
+                    Our Strength
+                  </h2>
+                  <p className="mt-4 text-lg text-gray-600 font-abadi-extralight">
+                  We believe that your success is our success. That’s why we take the time to understand your unique goals and aspirations. By fostering a collaborative environment, we tailor our strategies to meet your specific needs. Whether you’re seeking guidance in leadership development, strategic planning, or personal growth, our consultants are here to equip you with the tools and knowledge necessary to navigate your journey.
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <Image
+                      src="/images/strength.png"
+                      alt="Team collaboration"
+                      fill
+                      className="object-cover rounded-lg shadow-lg"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <div className="mt-16">
+            <div className="mt-60 flex flex-col items-center">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -226,7 +251,7 @@ export default function About() {
             </div>
 
             {/* FAQ Section */}
-            <div className="mt-24">
+            <div className="mt-50">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

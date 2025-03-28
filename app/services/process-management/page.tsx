@@ -1,11 +1,12 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
+import processmgt1 from "@/public/images/processmgt6.png";
 
 export default function ProcessManagement() {
   return (
     <ServiceTemplate
       title="Process Management"
       description="Our process management services focus on optimizing your operational workflows, improving efficiency, and ensuring consistent quality across all business processes."
-      image="/images/project.jpg"
+      image="/images/processmgt1.png"
       features={[
         "Business process analysis and optimization",
         "Workflow automation solutions",
@@ -21,7 +22,6 @@ export default function ProcessManagement() {
         "Improved quality consistency",
         "Enhanced process visibility",
         "Better compliance management"
-      ]}
-    />
+      ]} backgroundImage={processmgt1.src}    />
   );
 } 

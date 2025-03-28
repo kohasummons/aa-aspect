@@ -51,13 +51,17 @@ const CtaSection = () => {
               />
               <motion.button 
                 type="submit"
-                className="bg-[#003840] text-white md:self-center md:w-[200px] px-6 md:px-8 py-3 md:py-4 font-candara-bold hover:bg-[#004a54] transition-colors whitespace-nowrap cursor-pointer"
+                className="bg-[#003840] text-white md:self-center md:w-[200px] px-6 md:px-8 py-3 md:py-4 font-candara-bold transition-all duration-300 whitespace-nowrap cursor-pointer rounded-full relative group scale-105 hover:scale-110"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={status === "loading"}
               >
                 {status === "loading" ? "Subscribing..." : "Subscribe"}
+                <span className="absolute inset-0 rounded-full -m-[2px] transition-all duration-300" />
+                <span className="absolute inset-0 rounded-full opacity-30 transform origin-center transition-all duration-300 scale-105 shadow-[0_0_30px_8px_rgba(20,184,166,0.95)] group-hover:opacity-40 group-hover:shadow-[0_0_40px_12px_rgba(20,184,166,0.5)]" />
               </motion.button>
+
+             
             </div>
             {status === "success" && (
               <p className="mt-4 text-green-400">Successfully subscribed!</p>

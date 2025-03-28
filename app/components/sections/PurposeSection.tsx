@@ -39,16 +39,15 @@ const PurposeSection = () => {
           ref={textRef}
           className="flex flex-col items-center"
         >
-          <h2 className="text-[19px] sm:text-[20px] lg:text-[35px] text-center font-abadi-extralight text-[#003840] mb-5 md:mb-10">
-            <span className="font-bold">aa-aspect</span> purpose is to
-            better the world with new  <br /> possibilities made real. By continuously
-            co-creating <br /> and innovating with our partners,
+          <h2 className="text-[19px] sm:text-[20px] lg:text-[35px] text-center font-abadi-extralight text-[#003840] mb-5 md:mb-10 w-8/12">
+          Our tailored services empower us to improve your requirements by unlocking new possibilities and delivering real-world solutions. We achieve this through collaborative innovation with our valued partners.
           </h2>
           
-          <Link href="/about">
-            <button className="bg-[#003840] text-white md:px-8 px-4 py-2 md:py-4 font-candara-bold hover:bg-[#004a54] transition-colors">
-              LEARN MORE
-            </button>
+
+          <Link href="/about" className=" lg:block px-8 py-4 bg-[#003840] text-white cursor-pointer rounded-full relative group transition-all duration-300 scale-105 hover:scale-110">
+            LEARN MORE
+            <span className="absolute inset-0 rounded-full -m-[2px] transition-all duration-300" />
+            <span className="absolute inset-0 rounded-full bg-[#003840] opacity-30 transform origin-center transition-all duration-300 scale-105 shadow-[0_0_30px_8px_rgba(20,184,166,0.95)] group-hover:opacity-40 group-hover:shadow-[0_0_40px_12px_rgba(20,184,166,0.5)]" />
           </Link>
         </motion.div>
       </div>
