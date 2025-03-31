@@ -1,33 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function InfiniteScrollSection() {
   const scrollItem = (
-    <div className="flex items-center flex-nowrap gap-8">
-      <div className="flex">
-        <span className="text-[14px] md:text-[24px] font-candara-light text-white/70 whitespace-nowrap">
-          AirBnb
-        </span>
-        {/* <AirBnbIcon /> */}
+    <div className="flex items-center flex-nowrap gap-20">
+      <div className="w-[200px] h-auto">
+      <Image src="/images/brands/pureway.png" alt="pureway" width={120} height={120}/>
       </div>
-      <div className="flex">
-        <span className="text-[14px] md:text-[24px] font-candara-light text-white/70 whitespace-nowrap">
-          Ollama
-        </span>
-        {/* <OllamaIcon /> */}
+      <div className="w-[200px] h-auto font-bold text-white text-xl md:text-xl font-abadi-regular">TECNODEV LTD</div>
+      <div className="w-[200px] h-auto">
+      <Image src="/images/brands/seedventures.png" alt="seed ventures" width={120} height={120}/>
       </div>
-      <div className="flex">
-        <span className="text-[14px] md:text-[24px] font-candara-light text-white/70 whitespace-nowrap">
-          Tekton
-        </span>
-        {/* <TektonIcon /> */}
+      <div className="w-[200px] h-auto font-bold text-white text-xl md:text-xl font-abadi-regular">SEALGARD </div>
+      <div className="w-[200px] h-auto">
+      <Image src="/images/brands/jlr.png" alt="Jlr" width={60} height={60}/>
       </div>
+
+      <div className="w-[200px] h-auto font-bold text-white text-xl md:text-xl font-abadi-regular">TWINFORDS</div>
+
     </div>
   );
 
   return (
-    <div className="w-full bg-[#003840] overflow-hidden py-4">
+    <div className="w-full bg-[#000000] overflow-hidden py-4">
       <div className="relative">
         <motion.div
           className="flex items-center gap-8"
