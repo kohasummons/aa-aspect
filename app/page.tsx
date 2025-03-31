@@ -13,7 +13,6 @@ export default function Home() {
       <Header />
       <Hero />
       <InfiniteScrollSection />
-      {/* <TrustedBySection /> */}
       <PurposeSection />
       <ServicesSection />
       <BlogSection/>
