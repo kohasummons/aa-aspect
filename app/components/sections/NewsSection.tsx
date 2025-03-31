@@ -4,7 +4,6 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import FadedElementSVG from '../../../public/images/faded-element.svg'
 
 interface NewsPost {
   id: number;
@@ -111,7 +110,7 @@ const NewsSection = () => {
     <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden  px-4 md:px-6">
       {/* Background pattern */}
       <div className="absolute right-0 top-0 opacity-40">
-        <Image src={FadedElementSVG} alt="background effect"/>
+        <Image src="/images/faded-element.svg" alt="background effect" width={100} height={100} />
       </div>
 
       <div className="container mx-auto relative z-10">
