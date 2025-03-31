@@ -13,11 +13,19 @@ import type { NewsPost } from "@/lib/types/news";
 
 const categories = [
   "All",
-  "Project & Product",
-  "Process",
-  "Quality",
-  "FMEA Coaching",
+  "project-and-product",
+  "process-mangagement",
+  "quality",
+  "fmea-coaching",
 ];
+
+const categoryDisplayNames: { [key: string]: string } = {
+  "All": "All",
+  "project-and-product": "Project & Product",
+  "process-mangagement": "Process Management",
+  "quality": "Quality",
+  "fmea-coaching": "FMEA Coaching",
+};
 
 export default function News() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -25,9 +33,8 @@ export default function News() {
   const { posts, postsLoading, postsError } = useNews();
 
   const filteredPosts = posts.filter((post: NewsPost) => {
-    const postCategory = post.categories.nodes[0]?.name || "";
-    const matchesCategory =
-      selectedCategory === "All" || postCategory === selectedCategory;
+    const postCategory = post.categories.nodes[0]?.slug || "";
+    const matchesCategory = selectedCategory === "All" || postCategory === selectedCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
@@ -79,7 +86,7 @@ export default function News() {
                         : "bg-gray-100 text-[#003840] hover:bg-gray-200"
                     }`}
                   >
-                    {category}
+                    {categoryDisplayNames[category]}
                   </button>
                 ))}
               </div>
