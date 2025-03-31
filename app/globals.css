@@ -45,3 +45,69 @@ body {
   --font-candara-bold: var(--font-candara-bold);
   --font-abadi-extralight: var(--font-abadi-extralight);
 }
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #003840,
+    #005a65,
+    #007d8a,
+    #00a0b0,
+    #00c3d5,
+    #00e6fa,
+    #00c3d5,
+    #00a0b0,
+    #003840
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #003840;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+}

@@ -302,7 +302,7 @@ export function Header() {
               <span className={`absolute inset-0 rounded-sm -m-[2px] ${
                 isActivePath('/contact-us') ? 'border-white/100' : ''
               } group-hover:border-white/100 transition-all duration-300`} />
-              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#14b8a6] transform origin-left transition-all duration-300 
+              <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#14b8a6] transform origin-left transition-all duration-300 f4
                   ${isActivePath('/contact-us') ? 'scale-x-100 shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]' : 'scale-x-0'} 
                   group-hover:scale-x-100 group-hover:shadow-[0_0_20px_4px_rgba(20,184,166,0.9)]`} />
             </span>
@@ -311,10 +311,8 @@ export function Header() {
         </nav>
 
         {/* Desktop CTA Button - updated to show only on desktop */}
-        <Link href="/contact-us" className="hidden lg:block px-8 py-3 bg-[#003840] text-white cursor-pointer rounded-full relative group transition-all duration-300 scale-105 hover:scale-110">
+        <Link href="/contact-us" className="hidden lg:block button-85 px-8 py-4 bg-[#003840] text-white cursor-pointer rounded-full after:rounded-full before:rounded-full relative group transition-all duration-300 scale-105 hover:scale-110">
             GET IN TOUCH
-            <span className="absolute inset-0 rounded-full -m-[2px] transition-all duration-300" />
-            <span className="absolute inset-0 rounded-full bg-[#003840] opacity-30 transform origin-center transition-all duration-300 scale-105 shadow-[0_0_30px_8px_rgba(20,184,166,0.95)] group-hover:opacity-40 group-hover:shadow-[0_0_40px_12px_rgba(20,184,166,0.5)]" />
           </Link>
       </div>
     </motion.header>

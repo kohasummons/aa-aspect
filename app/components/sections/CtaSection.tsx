@@ -46,19 +46,17 @@ const CtaSection = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 bg-white/10 border border-white/20 rounded focus:outline-none focus:border-white/40"
+                className="flex-1 px-6 py-3 bg-white/10 border rounded-full border-white/20 focus:outline-none focus:border-white/40"
                 required
               />
               <motion.button 
                 type="submit"
-                className="bg-[#003840] text-white md:self-center md:w-[200px] px-6 md:px-8 py-3 md:py-4 font-candara-bold transition-all duration-300 whitespace-nowrap cursor-pointer rounded-full relative group scale-105 hover:scale-110"
+                className="bg-[#003840] button-85 text-white md:self-center md:w-[200px] px-6 md:px-8 py-3 md:py-4 font-candara-bold transition-all duration-300 whitespace-nowrap cursor-pointer rounded-full after:rounded-full before:rounded-full relative group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={status === "loading"}
               >
                 {status === "loading" ? "Subscribing..." : "Subscribe"}
-                <span className="absolute inset-0 rounded-full -m-[2px] transition-all duration-300" />
-                <span className="absolute inset-0 rounded-full opacity-30 transform origin-center transition-all duration-300 scale-105 shadow-[0_0_30px_8px_rgba(20,184,166,0.95)] group-hover:opacity-40 group-hover:shadow-[0_0_40px_12px_rgba(20,184,166,0.5)]" />
               </motion.button>
 
              
