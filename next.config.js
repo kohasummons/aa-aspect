@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['lightskyblue-frog-475745.hostingersite.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lightskyblue-frog-475745.hostingersite.com',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

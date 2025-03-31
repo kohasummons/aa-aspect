@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lordicon/react": "^1.10.1",
+    "@apollo/client": "^3.13.5",
     "clsx": "^2.1.1",
     "framer-motion": "^12.5.0",
     "motion": "^12.5.0",

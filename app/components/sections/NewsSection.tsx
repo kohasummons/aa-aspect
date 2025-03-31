@@ -4,54 +4,29 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useQuery } from "@apollo/client";
+import { GET_POSTS } from "@/lib/graphql/queries/posts";
 
-interface NewsPost {
-  id: number;
+interface Post {
+  id: string;
   title: string;
   date: string;
-  image: string;
   slug: string;
+  featuredImage: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+    }
+  }
 }
 
-const newsPosts: NewsPost[] = [
-  {
-    id: 1,
-    title: "Improving Process management with AI",
-    date: "February 20, 2023",
-    image: "/images/news-image.jpg",
-    slug: "improving-process-management-with-ai",
-  },
-  {
-    id: 2,
-    title: "Improving Process management with AI",
-    date: "February 20, 2023",
-    image: "/images/news-image.jpg",
-    slug: "improving-process-management-with-ai-2",
-  },
-  {
-    id: 3,
-    title: "Improving Process management with AI",
-    date: "February 20, 2023",
-    image: "/images/news-image.jpg",
-    slug: "improving-process-management-with-ai-3",
-  },
-  {
-    id: 4,
-    title: "Improving Process management with AI",
-    date: "February 20, 2023",
-    image: "/images/news-image.jpg",
-    slug: "improving-process-management-with-ai-4",
-  },
-  {
-    id: 5,
-    title: "Improving Process management with AI",
-    date: "February 20, 2023",
-    image: "/images/news-image.jpg",
-    slug: "improving-process-management-with-ai-5",
-  },
-];
+interface PostsData {
+  posts: {
+    nodes: Post[];
+  }
+}
 
-const NewsCard = ({ post }: { post: NewsPost }) => {
+const NewsCard = ({ post }: { post: Post }) => {
   return (
     <motion.div
       className="min-w-[400px] mr-8"
@@ -62,15 +37,21 @@ const NewsCard = ({ post }: { post: NewsPost }) => {
       <Link href={`/news/${post.slug}`} className="block">
         <div className="relative overflow-hidden">
           <Image
-            src={post.image}
-            alt={post.title}
+            src={post.featuredImage?.node?.sourceUrl || "/images/news-image.jpg"}
+            alt={post.featuredImage?.node?.altText || post.title}
             width={300}
             height={200}
             className="object-cover w-full h-[200px] transition-transform duration-300 hover:scale-105"
           />
         </div>
         <div className="mt-4">
-          <p className="text-white text-xs mb-2">{post.date}</p>
+          <p className="text-white text-xs mb-2">
+            {new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric"
+            })}
+          </p>
           <h3 className="text-white text-xl font-candara-bold">{post.title}</h3>
         </div>
       </Link>
@@ -81,6 +62,11 @@ const NewsCard = ({ post }: { post: NewsPost }) => {
 const NewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { data, loading, error } = useQuery<PostsData>(GET_POSTS, {
+    variables: { first: 5 }
+  });
+
+  const posts = data?.posts?.nodes || [];
 
   const handlePrev = () => {
     if (currentIndex > 0) {
@@ -90,7 +76,7 @@ const NewsSection = () => {
   };
 
   const handleNext = () => {
-    if (currentIndex < newsPosts.length - 1) {
+    if (currentIndex < posts.length - 1) {
       setCurrentIndex(currentIndex + 1);
       scrollToIndex(currentIndex + 1);
     }
@@ -106,8 +92,38 @@ const NewsSection = () => {
     }
   };
 
+  if (loading) return (
+    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-center h-40">
+          <div className="text-white">Loading news...</div>
+        </div>
+      </div>
+    </section>
+  );
+
+  if (error) return (
+    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-center h-40">
+          <div className="text-white">Error loading news. Please try again later.</div>
+        </div>
+      </div>
+    </section>
+  );
+
+  if (!posts.length) return (
+    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-center h-40">
+          <div className="text-white">No news posts available.</div>
+        </div>
+      </div>
+    </section>
+  );
+
   return (
-    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden  px-4 md:px-6">
+    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
       {/* Background pattern */}
       <div className="absolute right-0 top-0 opacity-40">
         <Image src="/images/faded-element.svg" alt="background effect" width={100} height={100} />
@@ -142,7 +158,7 @@ const NewsSection = () => {
             <button 
               onClick={handleNext}
               className="cursor-pointer w-12 h-12 md:w-14 md:h-14 rounded-full border border-white flex items-center justify-center text-white hover:bg-[#003840] hover:border-[#3c6e76] transition-colors"
-              disabled={currentIndex === newsPosts.length - 1}
+              disabled={currentIndex === posts.length - 1}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -156,7 +172,7 @@ const NewsSection = () => {
           className="flex overflow-x-auto overflow-y-hidden scrollbar-hide -mx-4 md:mx-0 px-4 md:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {newsPosts.map((post) => (
+          {posts.map((post) => (
             <NewsCard key={post.id} post={post} />
           ))}
         </div>

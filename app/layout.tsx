@@ -1,9 +1,10 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { RootProvider } from "./components/providers/RootProvider";
+import { ApolloProvider } from "./providers/ApolloProvider";
 import Script from "next/script";
-import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,9 +62,11 @@ export default function RootLayout({
         className={`${inter.variable} ${abadiExtraLight.variable} ${abadiProBold.variable} ${candaraBoldItalic.variable} ${candaraBold.variable} ${candaraItalic.variable} ${candara.variable} antialiased relative`}
       >
         <Script src="https://cdn.lordicon.com/lordicon.js" strategy="beforeInteractive" />
-        <RootProvider>
-          {children}
-        </RootProvider>
+        <ApolloProvider>
+          <RootProvider>
+            {children}
+          </RootProvider>
+        </ApolloProvider>
       </body>
     </html>
   );
