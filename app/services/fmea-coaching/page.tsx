@@ -5,8 +5,20 @@ export default function ProductManagement() {
   return (
     <ServiceTemplate
       title="FMEA Coaching"
-      description="Our coaching services help you develop and maintain successful products throughout their lifecycle, from conception to market launch and beyond."
+      description="Proactive Risk Mitigation & Enhanced Product Excellence: Mastering FMEA with aa aspect Coaching."
       image="/images/processmgt2.png"
+      content={{
+      
+        industries: [
+          "Manufacturing: Automotive, Aerospace, Electronics, Industrial Equipment, Consumer Goods, Food & Beverage",
+          "Healthcare & Medical Devices: Pharmaceuticals, Medical Equipment Manufacturing, Healthcare Services",
+          "Energy & Utilities: Oil & Gas, Renewable Energy, Power Generation, Water Treatment",
+          "Transportation & Logistics: Rail, Aviation, Shipping, Warehousing",
+          "Technology & Software Development: Hardware, Software, IT Services",
+          "Construction & Engineering: Civil Engineering, Building Construction, Infrastructure Projects"
+        ],
+        callToAction: "Ready to unlock the power of FMEA and transform your risk management approach? Contact aa aspect today for a consultation. Let us help you build a culture of proactive risk mitigation and achieve operational excellence through expert FMEA coaching."
+      }}
       features={[
         "Product strategy development",
         "Market research and analysis",
@@ -16,12 +28,14 @@ export default function ProductManagement() {
         "Go-to-market strategy"
       ]}
       benefits={[
-        "Better product-market fit",
-        "Accelerated time-to-market",
-        "Optimized product portfolio",
-        "Data-driven decision making",
-        "Improved product success rates",
-        "Enhanced customer value"
-      ]} backgroundImage={fmea1.src}    />
+        "Proactive Problem Prevention & Early Detection",
+        "Better Products and Processes",
+        "Reduced Costs, Improved Customer Satisfaction",
+        "Stronger Teams and Communication",
+        "Enhanced Risk Management",
+        "Continuous Improvement"
+      ]} 
+      backgroundImage={fmea1.src}    
+    />
   );
 } 

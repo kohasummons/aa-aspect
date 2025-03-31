@@ -12,9 +12,13 @@ interface ServiceTemplateProps {
   features: string[];
   benefits: string[];
   backgroundImage: string;
+  content?: {
+    industries: string[];
+    callToAction: string;
+  };
 }
 
-const ServiceTemplate = ({ title, description, image, features, benefits, backgroundImage }: ServiceTemplateProps) => {
+const ServiceTemplate = ({ title, description, image, features, benefits, backgroundImage, content }: ServiceTemplateProps) => {
 
   return (
     <>
@@ -135,6 +139,78 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
             </div>
           </div>
         </section>
+
+        {content && (
+          <>
+            <section className="py-20 bg-white">
+              <div className="container mx-auto px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="max-w-4xl mx-auto"
+                >
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-12"
+                >
+                  <h2 className="text-3xl md:text-4xl font-candara-bold text-[#003840] mb-6">
+                    Industries We Serve
+                  </h2>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {content.industries.map((industry, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-[#003840] p-8 rounded-lg text-white"
+                    >
+                      <h3 className="text-xl font-candara-bold mb-4">
+                        {industry.split(':')[0]}
+                      </h3>
+                      <p className="text-white/90 font-abadi-regular">
+                        {industry.split(':')[1]}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <section className="bg-black py-32 mt-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="max-w-3xl mx-auto text-center px-4"
+              >
+                <h2 className="text-4xl md:text-5xl font-candara-bold text-white mb-8">
+                  Transform Your Risk Management
+                </h2>
+                <p className="text-lg md:text-xl text-white/90 font-abadi-regular mb-12">
+                  Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence.
+                </p>
+                <button 
+                  className="bg-[#003840] hover:bg-[#004850] text-white font-candara-bold px-12 py-4 rounded-full transition-all duration-300 text-lg"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  Contact Us
+                </button>
+              </motion.div>
+            </section>
+          </>
+        )}
       </main>
       <Footer />
     </>

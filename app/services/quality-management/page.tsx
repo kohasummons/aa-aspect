@@ -6,7 +6,7 @@ export default function QualityManagement() {
     <ServiceTemplate
       title="Quality Management"
       description="Our quality management services focus on optimizing your operational workflows, improving efficiency, and ensuring consistent quality across all business processes."
-      image="/images/project.jpg"
+      image="/images/processmgt1.png"
       features={[
         "Business process analysis and optimization",
         "Workflow automation solutions",
