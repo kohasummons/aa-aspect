@@ -150,7 +150,7 @@ export default function About() {
                     over 20 years of industry experience, our team of seasoned
                     professionals specializes in IT, product development,
                     automotive, and logistics and supply chain management.{" "}
-                    <br />
+                    <br /><br />
                     At the heart of our service is a commitment to strategic
                     thinking and dynamic problem-solving. We understand that no
                     two challenges are alike, which is why we take pride in our

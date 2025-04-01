@@ -55,12 +55,12 @@ const ServicesSection = () => {
               href="/services/quality-management"
               className="service-card group"
             >
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840] relative">
                 <ServiceCard
                   title="Quality"
                   description="Trust us to be your ally in achieving unparalleled quality and dedication to customer satisfaction."
                 />
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={qualityImage}
                     alt="Quality Management"
@@ -76,12 +76,12 @@ const ServicesSection = () => {
               href="/services/process-management"
               className="service-card group"
             >
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840]">
                 <ServiceCard
                   title="Process Management"
                   description="Our seasoned team specializes in guiding businesses through the intricate transformations that accompany growth."
                 />
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={processImage}
                     alt="Process Management"
@@ -99,12 +99,12 @@ const ServicesSection = () => {
               href="/services/project-management"
               className="service-card group"
             >
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840] relative">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840] relative">
                 <ServiceCard
                   title="Project & Product"
                   description="AA Aspect comprehensive project management services cover every stage of the project lifecycle, from initiation to delivery."
                 />
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={projectImage}
                     alt="Project Management"
@@ -117,12 +117,12 @@ const ServicesSection = () => {
             </Link>
 
             <Link href="/services/fmea-coaching" className="service-card group">
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840]">
                 <ServiceCard
                   title="FMEA Coaching"
                   description="We empower your teams to proactively enhance quality, safety, and efficiency through tailored coaching programs. "
-                   />
-                   <div className="absolute bottom-4 right-4">
+                />
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={FmeaImage}
                     alt="FMEA Coaching"
