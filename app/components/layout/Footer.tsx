@@ -71,14 +71,14 @@ const Footer = () => {
       </div>
 
       {/* Background AA SVG */}
-      <div className="absolute -right-5 -bottom-10/12 z-0">
+      <div className="absolute -right-5 -bottom-10/12 z-0 pointer-events-none">
         <svg
           width="192"
           height="139"
           viewBox="0 0 192 139"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="md:w-[600px] w-[324px] h-full"
+          className="lg:w-[600px] hidden lg:block w-[324px] h-full opacity-30"
         >
           <path
             fillRule="evenodd"

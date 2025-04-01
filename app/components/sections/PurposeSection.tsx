@@ -11,7 +11,7 @@ const PurposeSection = () => {
   return (
     <section ref={sectionRef} className="relative md:py-[100px] py-20 overflow-hidden">
         {/* Background AA SVG */}
-        <div className="absolute right-0 -bottom-4/12 z-0">
+        <div className="absolute right-0 -bottom-4/12 z-0 pointer-events-none lg:block hidden opacity-30">
           <svg
             width="192"
             height="139"

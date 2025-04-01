@@ -150,7 +150,7 @@ export default function About() {
                     over 20 years of industry experience, our team of seasoned
                     professionals specializes in IT, product development,
                     automotive, and logistics and supply chain management.{" "}
-                    <br />
+                    <br /><br />
                     At the heart of our service is a commitment to strategic
                     thinking and dynamic problem-solving. We understand that no
                     two challenges are alike, which is why we take pride in our
@@ -274,7 +274,7 @@ export default function About() {
             </div>
 
             {/* FAQ Section */}
-            <div className="mt-50">
+            <div className="mt-50 z-10 relative">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -306,14 +306,14 @@ export default function About() {
         </div>
 
         {/* Background AA SVG */}
-        <div className="absolute -right-5 -bottom-1/12">
+        <div className="absolute -right-5 -bottom-1/12 z-0 pointer-events-none">
           <svg
             width="192"
             height="139"
             viewBox="0 0 192 139"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="md:w-[600px] w-[324px] h-full"
+            className="lg:w-[600px] hidden lg:block w-[324px] h-full opacity-30"
           >
             <path
               fillRule="evenodd"

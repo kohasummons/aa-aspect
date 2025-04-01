@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ServiceCard } from "../ui/SectionCards";
@@ -13,12 +12,9 @@ import FmeaImage from "@/public/images/fmea.png";
 
 
 const ServicesSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
   return (
     <section
-      ref={sectionRef}
       className="bg-black py-10 md:py-20 px-4 md:px-6 relative overflow-hidden"
     >
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10">
@@ -47,7 +43,6 @@ const ServicesSection = () => {
         </motion.div>
 
         <div
-          ref={cardsRef}
           className="flex flex-col xl:flex-row items-center justify-center gap-7 md:gap-20"
         >
           <div className="flex flex-col gap-7 md:gap-20">
@@ -55,12 +50,12 @@ const ServicesSection = () => {
               href="/services/quality-management"
               className="service-card group"
             >
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840] relative">
                 <ServiceCard
                   title="Quality"
                   description="Trust us to be your ally in achieving unparalleled quality and dedication to customer satisfaction."
                 />
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={qualityImage}
                     alt="Quality Management"
@@ -76,12 +71,12 @@ const ServicesSection = () => {
               href="/services/process-management"
               className="service-card group"
             >
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840]">
                 <ServiceCard
                   title="Process Management"
                   description="Our seasoned team specializes in guiding businesses through the intricate transformations that accompany growth."
                 />
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={processImage}
                     alt="Process Management"
@@ -99,12 +94,12 @@ const ServicesSection = () => {
               href="/services/project-management"
               className="service-card group"
             >
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840] relative">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840] relative">
                 <ServiceCard
                   title="Project & Product"
                   description="AA Aspect comprehensive project management services cover every stage of the project lifecycle, from initiation to delivery."
                 />
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={projectImage}
                     alt="Project Management"
@@ -117,12 +112,12 @@ const ServicesSection = () => {
             </Link>
 
             <Link href="/services/fmea-coaching" className="service-card group">
-              <div className="transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] bg-[#003840]">
+              <div className="transform transition-all duration-300 shadow-[0_0_20px_2px_rgba(0,56,64,0.6),0_0_30px_5px_rgba(0,112,128,0.3)] group-hover:shadow-[0_0_25px_4px_rgba(0,56,64,0.6),0_0_40px_8px_rgba(0,112,128,0.5)] group-hover:scale-[1.02] bg-[#003840]">
                 <ServiceCard
                   title="FMEA Coaching"
                   description="We empower your teams to proactively enhance quality, safety, and efficiency through tailored coaching programs. "
-                   />
-                   <div className="absolute bottom-4 right-4">
+                />
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                   <Image 
                     src={FmeaImage}
                     alt="FMEA Coaching"
