@@ -57,7 +57,7 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
                 viewBox="0 0 192 139"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="md:w-[600px] w-[324px] h-full"
+                className="lg:w-[600px] hidden lg:block w-[324px] h-full opacity-30"
               >
                 <path
                   fillRule="evenodd"

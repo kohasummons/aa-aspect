@@ -21,7 +21,7 @@ function useMediaQuery(query: string) {
 
 export function InfiniteScrollSection() {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const scrollSpeed = isMobile ? 6 : 12; // Twice as fast on mobile
+  const scrollSpeed = isMobile ? 10 : 12; // Twice as fast on mobile
   
   const scrollItem = (
     <div className="flex items-center flex-nowrap md:gap-20 gap-8">
@@ -36,12 +36,12 @@ export function InfiniteScrollSection() {
       <div className="w-[120px] md:w-[200px] h-auto">
       <Image src="/images/brands/jlr.png" alt="Jlr" width={60} height={60}/>
       </div>
-      <div className="w-[120px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">TWINFORDS</div>
+      <div className="w-[150px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">TWINFORDS</div>
     </div>
   );
 
   return (
-    <div className="w-full bg-[#000000] overflow-hidden py-4">
+    <div className="w-full bg-[#000000] overflow-hidden md:py-4">
       <div className="relative">
         <motion.div
           className="flex items-center gap-8"

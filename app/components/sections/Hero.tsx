@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section 
       ref={sectionRef} 
-      className="text-white min-h-[300px] h-[calc(85dvh-80px)] md:h-[calc(100dvh-80px)] max-h-[1500px] relative flex flex-col"
+      className="text-white h-full md:min-h-[calc(100dvh-80px)] relative flex flex-col pb-30"
     >
       <div className="absolute bg-[url(/images/hero-image-2.jpg)] bg-cover bg-center top-0 bottom-0 inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-70" />
 

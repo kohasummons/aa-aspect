@@ -13,12 +13,9 @@ import FmeaImage from "@/public/images/fmea.png";
 
 
 const ServicesSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
 
   return (
     <section
-      ref={sectionRef}
       className="bg-black py-10 md:py-20 px-4 md:px-6 relative overflow-hidden"
     >
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10">
@@ -47,7 +44,6 @@ const ServicesSection = () => {
         </motion.div>
 
         <div
-          ref={cardsRef}
           className="flex flex-col xl:flex-row items-center justify-center gap-7 md:gap-20"
         >
           <div className="flex flex-col gap-7 md:gap-20">

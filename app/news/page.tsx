@@ -26,7 +26,8 @@ export default function News() {
 
   const filteredPosts = posts.filter((post: NewsPost) => {
     const postCategory = post.categories.nodes[0]?.name || "";
-    const matchesCategory = selectedCategory === "All" || postCategory === selectedCategory;
+    const matchesCategory =
+      selectedCategory === "All" || postCategory === selectedCategory;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
@@ -39,7 +40,7 @@ export default function News() {
   return (
     <>
       <Header />
-      <div className="min-h-screen">
+      <div className="min-h-screen relative overflow-y-hidden">
         <section className="relative h-[40vh] flex items-center">
           <div className="absolute inset-0 bg-[url(/images/newsimg1.png)] bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
           <div className="relative z-10 w-full">
@@ -104,7 +105,10 @@ export default function News() {
                   <Link href={`/news/${post.slug}`} className="block group">
                     <div className="relative w-[380px] h-[200px] mb-4">
                       <Image
-                        src={post.featuredImage?.node.sourceUrl || "/images/news-image.jpg"}
+                        src={
+                          post.featuredImage?.node.sourceUrl ||
+                          "/images/news-image.jpg"
+                        }
                         alt={post.featuredImage?.node.altText || post.title}
                         fill
                         className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
@@ -132,14 +136,16 @@ export default function News() {
               ))}
             </div>
           </div>
-          <div className="absolute right-0 md:bottom-[-180px] bottom-[-140px] opacity-80">
+        </section>
+        {/* Background AA SVG */}
+        <div className="absolute -right-5 -bottom-2/12 z-0 pointer-events-none">
           <svg
             width="192"
             height="139"
             viewBox="0 0 192 139"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="md:w-[600px] w-[324px] h-full"
+            className="lg:w-[600px] hidden lg:block w-[324px] h-full opacity-30"
           >
             <path
               fillRule="evenodd"
@@ -149,7 +155,6 @@ export default function News() {
             />
           </svg>
         </div>
-        </section>
       </div>
       <CtaSection />
       <Footer />
