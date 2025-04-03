@@ -137,7 +137,7 @@ export default function Contact() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-candara-bold text-[#003840] mb-6">Get in Touch</h2>
+                  <h2 className="text-2xl font-candara-bold text-[#003840] mb-3">Get in Touch</h2>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
                       <MdPhone className="text-2xl text-[#003840]" />
@@ -147,15 +147,18 @@ export default function Contact() {
                       <MdEmail className="text-2xl text-[#003840]" />
                       <span className="font-abadi-extralight">info@aa-aspect.com</span>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <MdLocationOn className="text-2xl text-[#003840]" />
-                      <span className="font-abadi-extralight"><span className="font-bold">Registered Office Address:</span> 100, Regent Place, London, EC4V 3DX, United Kingdom</span>
-                    </div>
+                    
                   </div>
                 </div>
 
+                <div className='mt-12'>
+                  <h2 className="text-2xl font-candara-bold text-[#003840] mb-3">Registered Office Address</h2>
+                  <div className="font-abadi-extralight">
+                    <p>100, Regent Place, London, EC4V 3DX, United Kingdom</p>
+                  </div>
+                </div>
                 <div>
-                  <h2 className="text-2xl font-candara-bold text-[#003840] mb-6">Business Hours</h2>
+                  <h2 className="text-2xl font-candara-bold text-[#003840] mb-3">Business Hours</h2>
                   <div className="space-y-2 font-abadi-extralight">
                     <p>Monday — Friday</p>
                     <p>08:00 - 17:00</p>

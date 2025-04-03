@@ -68,7 +68,7 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
               </svg>
             </div>
           <div className="container mx-auto flex items-center justify-center px-4 relative z-10">
-            <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="flex flex-col md:flex-row md:gap-0 gap-12 items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
