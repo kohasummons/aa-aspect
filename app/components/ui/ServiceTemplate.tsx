@@ -68,20 +68,20 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
               </svg>
             </div>
           <div className="container mx-auto flex items-center justify-center px-4 relative z-10">
-            <div className="flex flex-col md:flex-row md:gap-0 gap-12 items-center justify-center">
+            <div className="w-full flex flex-col md:flex-row md:gap-0 items-center justify-between">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="flex-1"
+                className="flex-1 justify-center items-center"
               >
                 <Image
                   src={image}
                   alt={title}
                   width={250}
                   height={150}
-                  className="rounded-lg"
+                  className="mx-auto rounded-lg"
                 />
               </motion.div>
 
