@@ -4,7 +4,7 @@ import { Header } from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md';
+import { MdPhone, MdEmail } from 'react-icons/md';
 import CtaSection from '../components/sections/CtaSection';
 
 export default function Contact() {
