@@ -16,8 +16,7 @@ export default function ProductManagement() {
           "Transportation & Logistics: Rail, Aviation, Shipping, Warehousing",
           "Technology & Software Development: Hardware, Software, IT Services",
           "Construction & Engineering: Civil Engineering, Building Construction, Infrastructure Projects"
-        ],
-        callToAction: "Ready to unlock the power of FMEA and transform your risk management approach? Contact aa aspect today for a consultation. Let us help you build a culture of proactive risk mitigation and achieve operational excellence through expert FMEA coaching."
+        ]
       }}
       features={[
         "Product strategy development",

@@ -15,7 +15,7 @@ interface ServiceTemplateProps {
   content?: {
     industries?: string[];
     coreServices?: string[];
-    callToAction: string;
+    callToAction?: string;
   };
 }
 
@@ -187,31 +187,43 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
                 </div>
               </div>
             </section>
-
-            <section className="bg-black py-32 mt-20">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="max-w-4xl mx-auto text-center px-4"
-              >
-                <h2 className="text-4xl md:text-5xl font-candara-bold text-white mb-8">
-                  {title === "Quality Management" ? "Dedicated Commitment to Excellence" : "Transform Your Risk Management"}
-                </h2>
-                <p className="text-lg md:text-xl text-white/90 font-abadi-regular mb-12">
-                  Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence.
-                </p>
-                <button 
-                  className="bg-[#003840] hover:bg-[#004850] text-white font-candara-bold px-12 py-4 rounded-full transition-all duration-300 text-lg"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  Contact Us
-                </button>
-              </motion.div>
-            </section>
           </>
         )}
+
+        {/* Final CTA Section - Always Rendered */}
+        <section className="bg-black py-32 mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center px-4"
+          >
+            <h2 className="text-4xl md:text-5xl font-candara-bold text-white mb-8">
+              {title === "Quality Management" ? "Dedicated Commitment to Excellence" 
+                : title === "Project and Product Management" ? "Streamline Your Project Execution"
+                : title === "Process Management" ? "Optimize Your Business Processes"
+                : title === "FMEA Coaching" ? "Transform Your Risk Management"
+                : "Transform Your Risk Management"
+              }
+            </h2>
+            <p className="text-lg md:text-xl text-white/90 font-abadi-regular mb-12">
+              {title === "Quality Management" ? "Elevate your business's performance and ensure excellence at every level with AA Aspect's comprehensive suite of quality management services."
+                : title === "Project and Product Management" ? "By seamlessly blending traditional project and product management principles with bespoke solutions, we customize our methods to align perfectly with your specific requirements."
+                : title === "Process Management" ? "With years of hands-on experience, we partner with you to identify bottlenecks, streamline operations, and cultivate a robust infrastructure that positions your business for long-term success."
+                : title === "FMEA Coaching" ? "Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence.."
+                : "Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence." /* Default/Risk Management */
+              }
+            </p>
+            <button 
+              className="bg-[#003840] hover:bg-[#004850] text-white font-candara-bold px-12 py-4 rounded-full transition-all duration-300 text-lg"
+              onClick={() => window.location.href = '/contact'}
+            >
+              Contact Us
+            </button>
+          </motion.div>
+        </section>
+
       </main>
       <Footer />
     </>
