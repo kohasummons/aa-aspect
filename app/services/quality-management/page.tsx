@@ -15,9 +15,8 @@ export default function QualityManagement() {
           "Quality Audits and Assessments: Comprehensive evaluations of your organization's quality processes to ensure compliance and effectiveness.",
           "Quality Assurance (QA): Systematic measures to ensure that your products and services consistently meet specified requirements.",
           "Quality Control (QC): Techniques and activities used to fulfill quality requirements, ensuring that outputs meet high standards.",
-          "Risk Assessment (RA): Designed to identify, evaluate, and prioritize risks, enabling you to mitigate potential issues before they impact your operations."
-        ],
-        callToAction: " Together, we will inspire confidence in your products and services, giving you the competitive edge needed in today’s fast-paced market. Trust AA Aspect to be your ally in achieving unparalleled quality and unwavering dedication to customer satisfaction."
+          "Risk Assessment (RA): Designed to identify, evaluate, and prioritize risks, enabling you to mitigate potential issues before they impact your operations."
+        ]
       }}
       features={[
         "Business process analysis and optimization",
