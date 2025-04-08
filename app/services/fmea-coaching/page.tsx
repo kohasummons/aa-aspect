@@ -1,14 +1,13 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
 import fmea1 from "@/public/images/processmgt3.png";
 
-export default function ProductManagement() {
+export default function FMEACoaching() {
   return (
     <ServiceTemplate
       title="FMEA Coaching"
       description="Proactive Risk Mitigation & Enhanced Product Excellence: Mastering FMEA with aa aspect Coaching."
       image="/images/processmgt2.png"
       content={{
-      
         industries: [
           "Manufacturing: Automotive, Aerospace, Electronics, Industrial Equipment, Consumer Goods, Food & Beverage",
           "Healthcare & Medical Devices: Pharmaceuticals, Medical Equipment Manufacturing, Healthcare Services",

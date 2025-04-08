@@ -33,6 +33,8 @@ export default function QualityManagement() {
         "Increased competitiveness",
         "Improved risk management",
         "Better financial performance"
-      ]} backgroundImage={qualitymgt1.src}    />
+      ]} 
+      backgroundImage={qualitymgt1.src}    
+    />
   );
 } 

@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import { useNews } from "@/lib/hooks/useNews";
 import { useParams } from "next/navigation";
 import CtaSection from "@/app/components/sections/CtaSection";
+import Script from "next/script";
+import Link from "next/link";
 
 export default function PostPage() {
   const params = useParams<{ slug: string }>();
@@ -18,15 +20,75 @@ export default function PostPage() {
   if (error) return <div>Error loading post</div>;
   if (!post) return <div>Post not found</div>;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.featuredImage?.node.sourceUrl || "/images/news-image.jpg",
+    datePublished: post.date,
+    dateModified: post.modified,
+    author: {
+      "@type": "Organization",
+      name: "aa aspect Limited",
+      url: "https://aa-aspect.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "aa aspect Limited",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://aa-aspect.com/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://aa-aspect.com/news/${params.slug}`,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://aa-aspect.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "News",
+        item: "https://aa-aspect.com/news",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://aa-aspect.com/news/${params.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <Script id="json-ld" type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </Script>
+      <Script id="breadcrumb-json-ld" type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </Script>
       <Header />
       <article className="min-h-screen">
         {/* Hero Section */}
         <section className="relative h-[50vh] flex items-center">
           <div className="absolute inset-0">
             <Image
-              src={post.featuredImage?.node.sourceUrl || "/images/news-image.jpg"}
+              src={
+                post.featuredImage?.node.sourceUrl || "/images/news-image.jpg"
+              }
               alt={post.featuredImage?.node.altText || post.title}
               fill
               className="object-cover"
@@ -36,6 +98,16 @@ export default function PostPage() {
           </div>
           <div className="relative z-10 w-full">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <div className="flex justify-center gap-2">
+                {post.categories.nodes.map((category: any) => (
+                  <span
+                    key={category.slug}
+                    className="px-3 py-1 bg-teal-600/20 text-white rounded-full text-sm mb-6"
+                  >
+                    {category.name} • {new Date(post.date).toLocaleDateString()}
+                  </span>
+                ))}
+              </div>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -50,19 +122,52 @@ export default function PostPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-4 text-white/90 space-y-2"
               >
-                <p className="text-sm">
-                  {new Date(post.date).toLocaleDateString()}
-                </p>
-                <div className="flex justify-center gap-2">
-                  {post.categories.nodes.map((category: any) => (
-                    <span
-                      key={category.slug}
-                      className="px-3 py-1 bg-teal-600/20 rounded-full text-sm"
+                <ol className="flex items-center justify-center space-x-4 text-sm mb-4">
+                  <li>
+                    <Link href="/" className="text-white/80 hover:text-white">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <svg
+                      className="h-5 w-5 text-white/60"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                     >
-                      {category.name}
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </li>
+                  <li>
+                    <Link
+                      href="/news"
+                      className="text-white/80 hover:text-white"
+                    >
+                      News
+                    </Link>
+                  </li>
+                  <li>
+                    <svg
+                      className="h-5 w-5 text-white/60"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </li>
+                  <li>
+                    <span className="text-white/60" aria-current="page">
+                      {post.title}
                     </span>
-                  ))}
-                </div>
+                  </li>
+                </ol>
               </motion.div>
             </div>
           </div>

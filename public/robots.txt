@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://aa-aspect.com
+
+# Sitemaps
+Sitemap: https://aa-aspect.com/sitemap.xml 

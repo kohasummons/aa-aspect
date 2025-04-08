@@ -11,7 +11,6 @@ import { useNews } from "@/lib/hooks/useNews";
 import { LoadingSpinner } from "../components/ui/LoadingSpinner";
 import type { NewsPost } from "@/lib/types/news";
 import { useVirtualizer } from '@tanstack/react-virtual';
-// import type { VirtualItem } from '@tanstack/react-virtual';
 
 const categories = [
   "All",
@@ -57,8 +56,8 @@ export default function News() {
   return (
     <>
       <Header />
-      <div className="min-h-screen relative overflow-y-hidden">
-        <section className="relative h-[40vh] flex items-center">
+      <div className="h-full relative overflow-y-hidden">
+        <section className="relative h-full md:min-h-[40dvh] flex items-center">
           <div className="absolute inset-0">
             <Image
               src="/images/newsimg1.png"
