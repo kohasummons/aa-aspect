@@ -14,11 +14,40 @@ export default function Contact() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    setIsSubmitting(true);
+    setShowSuccess(false);
+    
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      setShowSuccess(true);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -127,10 +156,14 @@ export default function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="button-85 rounded-full after:rounded-full before:rounded-full w-full bg-[#003840] text-white py-2 px-4 hover:bg-teal-700 transition-colors duration-300 font-candara-bold"
+                    disabled={isSubmitting}
+                    className="button-85 rounded-full after:rounded-full before:rounded-full w-full bg-[#003840] text-white py-2 px-4 hover:bg-teal-700 transition-colors duration-300 font-candara-bold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
+                  {showSuccess && (
+                    <p className="text-sm text-green-600 text-center mt-2 font-abadi-extralight">Message sent successfully!</p>
+                  )}
                 </form>
               </motion.div>
 

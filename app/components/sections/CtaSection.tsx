@@ -12,13 +12,23 @@ const CtaSection = () => {
     setStatus("loading");
     
     try {
-      // TODO: Implement newsletter signup API call
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to subscribe');
+      }
+
       setStatus("success");
       setEmail("");
     } catch (error) {
+      console.error('Error:', error);
       setStatus("error");
-      console.error(error);
     }
   };
 
