@@ -123,7 +123,10 @@ export function Header() {
                   height: isMobileServicesOpen ? "auto" : 0,
                   opacity: isMobileServicesOpen ? 1 : 0
                 }}
-                transition={{ duration: 0.3 }}
+                transition={{ 
+                  duration: 0.4,
+                  willChange: "transform, opacity"
+                }}
                 className="overflow-hidden"
               >
                 <div className="pt-4 pl-4 space-y-4">
@@ -135,7 +138,7 @@ export function Header() {
                       setIsMenuOpen(false);
                     }}
                   >
-                    Project Management
+                    Project & Product
                   </Link>
                   <Link
                     href="/services/process-management"
@@ -155,7 +158,7 @@ export function Header() {
                       setIsMenuOpen(false);
                     }}
                   >
-                    Quality Management
+                    Quality
                   </Link>
                   <Link
                     href="/services/fmea-coaching"

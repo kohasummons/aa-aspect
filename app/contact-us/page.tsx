@@ -187,7 +187,7 @@ export default function Contact() {
                 <div className='mt-12'>
                   <h2 className="text-2xl font-candara-bold text-[#003840] mb-3">Registered Office Address</h2>
                   <div className="font-abadi-extralight">
-                    <p>100, Regent Place, London, EC4V 3DX, United Kingdom</p>
+                    <p>50 Princess St., Ipswich IP1 1RJ, United Kingdom</p>
                   </div>
                 </div>
                 <div>

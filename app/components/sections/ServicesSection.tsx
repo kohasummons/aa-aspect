@@ -24,6 +24,7 @@ const ServicesSection = () => {
           height={100}
           alt="Background Pattern"
           className="object-contain w-[80%] h-auto"
+          priority
         />
       </div>
       <div className="container mx-auto relative z-10">
@@ -62,6 +63,8 @@ const ServicesSection = () => {
                     width={40}
                     height={40}
                     className="w-20 h-20 object-contain"
+                    sizes="(max-width: 768px) 80px, 160px"
+                    quality={75}
                   />
                 </div>
               </div>
@@ -83,6 +86,8 @@ const ServicesSection = () => {
                     width={40}
                     height={40}
                     className="w-20 h-20 object-contain"
+                    sizes="(max-width: 768px) 80px, 160px"
+                    quality={75}
                   />
                 </div>
               </div>
@@ -106,6 +111,8 @@ const ServicesSection = () => {
                     width={40}
                     height={40}
                     className="w-20 h-20 object-contain"
+                    sizes="(max-width: 768px) 80px, 160px"
+                    quality={75}
                   />
                 </div>
               </div>
@@ -124,6 +131,8 @@ const ServicesSection = () => {
                     width={40}
                     height={40}
                     className="w-20 h-20 object-contain"
+                    sizes="(max-width: 768px) 80px, 160px"
+                    quality={75}
                   />
                 </div>
               </div>

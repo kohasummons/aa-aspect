@@ -48,7 +48,7 @@ const Footer = () => {
               Socials
             </h3>
             <Link
-              href="https://linkedin.com/company/aaaspect"
+              href="https://www.linkedin.com/company/aa-aspect-limited"
               className="flex items-center text-[#003840] mb-2 hover:underline"
             >
               <span className="inline-block mr-2">

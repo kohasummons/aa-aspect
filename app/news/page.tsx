@@ -5,11 +5,13 @@ import Footer from "../components/layout/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import CtaSection from "../components/sections/CtaSection";
 import { useNews } from "@/lib/hooks/useNews";
 import { LoadingSpinner } from "../components/ui/LoadingSpinner";
 import type { NewsPost } from "@/lib/types/news";
+import { useVirtualizer } from '@tanstack/react-virtual';
+// import type { VirtualItem } from '@tanstack/react-virtual';
 
 const categories = [
   "All",
@@ -31,6 +33,7 @@ export default function News() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const { posts, postsLoading, postsError } = useNews();
+  const parentRef = useRef<HTMLDivElement>(null);
 
   const filteredPosts = posts.filter((post: NewsPost) => {
     const postCategory = post.categories.nodes[0]?.slug || "";
@@ -41,6 +44,13 @@ export default function News() {
     return matchesCategory && matchesSearch;
   });
 
+  const rowVirtualizer = useVirtualizer({
+    count: Math.ceil(filteredPosts.length / 3), // 3 columns
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 400, // Estimated row height
+    overscan: 3 // Number of items to render outside of view
+  });
+
   if (postsLoading) return <LoadingSpinner />;
   if (postsError) return <div>Error loading posts</div>;
 
@@ -49,7 +59,18 @@ export default function News() {
       <Header />
       <div className="min-h-screen relative overflow-y-hidden">
         <section className="relative h-[40vh] flex items-center">
-          <div className="absolute inset-0 bg-[url(/images/newsimg1.png)] bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
+          <div className="absolute inset-0">
+            <Image
+              src="/images/newsimg1.png"
+              alt="News Hero Background"
+              fill
+              priority
+              quality={85}
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
           <div className="relative z-10 w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <motion.h1
@@ -101,46 +122,73 @@ export default function News() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post: NewsPost, index: number) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                >
-                  <Link href={`/news/${post.slug}`} className="block group">
-                    <div className="relative w-[380px] h-[200px] mb-4">
-                      <Image
-                        src={
-                          post.featuredImage?.node.sourceUrl ||
-                          "/images/news-image.jpg"
-                        }
-                        alt={post.featuredImage?.node.altText || post.title}
-                        fill
-                        className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
-                      />
+            <div 
+              ref={parentRef} 
+              className="h-[800px] overflow-auto"
+            >
+              <div
+                style={{
+                  height: `${rowVirtualizer.getTotalSize()}px`,
+                  width: '100%',
+                  position: 'relative',
+                }}
+              >
+                {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+                  const fromIndex = virtualRow.index * 3;
+                  const toIndex = Math.min(fromIndex + 3, filteredPosts.length);
+                  const rowPosts = filteredPosts.slice(fromIndex, toIndex);
+
+                  return (
+                    <div
+                      key={virtualRow.index}
+                      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 absolute top-0 left-0 w-full"
+                      style={{
+                        transform: `translateY(${virtualRow.start}px)`,
+                      }}
+                    >
+                      {rowPosts.map((post: NewsPost) => (
+                        <motion.div
+                          key={post.id}
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ duration: 0.4 }}
+                          viewport={{ once: true }}
+                        >
+                          <Link href={`/news/${post.slug}`} className="block group">
+                            <div className="relative w-[380px] h-[200px] mb-4">
+                              <Image
+                                src={post.featuredImage?.node.sourceUrl || "/images/news-image.jpg"}
+                                alt={post.featuredImage?.node.altText || post.title}
+                                fill
+                                className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                                loading="lazy"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <span className="text-sm text-teal-600 font-candara-bold">
+                                {post.categories.nodes[0]?.name || "Uncategorized"}
+                              </span>
+                              <h2 className="text-xl font-candara-bold text-[#003840] group-hover:text-teal-600 transition-colors duration-300">
+                                {post.title}
+                              </h2>
+                              <p
+                                dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                                className="text-gray-600 font-abadi-extralight truncate"
+                              />
+                              <div className="flex justify-between items-center pt-2">
+                                <span className="text-sm text-gray-500 font-abadi-extralight">
+                                  {new Date(post.date).toLocaleDateString()}
+                                </span>
+                              </div>
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
                     </div>
-                    <div className="space-y-2">
-                      <span className="text-sm text-teal-600 font-candara-bold">
-                        {post.categories.nodes[0]?.name || "Uncategorized"}
-                      </span>
-                      <h2 className="text-xl font-candara-bold text-[#003840] group-hover:text-teal-600 transition-colors duration-300">
-                        {post.title}
-                      </h2>
-                      <p
-                        dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                        className="text-gray-600 font-abadi-extralight truncate"
-                      />
-                      <div className="flex justify-between items-center pt-2">
-                        <span className="text-sm text-gray-500 font-abadi-extralight">
-                          {new Date(post.date).toLocaleDateString()}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

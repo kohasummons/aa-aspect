@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Footer from "../layout/Footer";
 import Image from "next/image";
 import { Header } from "../layout/Header";
+import Link from "next/link";
 
 interface ServiceTemplateProps {
   title: string;
@@ -215,12 +216,12 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
                 : "Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence." /* Default/Risk Management */
               }
             </p>
-            <button 
-              className="bg-[#003840] hover:bg-[#004850] text-white font-candara-bold px-12 py-4 rounded-full transition-all duration-300 text-lg"
-              onClick={() => window.location.href = '/contact'}
+            <Link 
+              className="button-85 bg-[#003840] rounded-full after:rounded-full before:rounded-full hover:bg-[#004850] text-white font-candara-bold px-12 py-4 transition-all duration-300 text-lg cursor-pointer"
+              href="/contact-us"
             >
               Contact Us
-            </button>
+            </Link>
           </motion.div>
         </section>
 

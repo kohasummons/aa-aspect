@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { RootProvider } from "./components/providers/RootProvider";
 import { ApolloProvider } from "./providers/ApolloProvider";
-import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,29 +16,9 @@ const abadiExtraLight = localFont({
   variable: "--font-abadi-extralight",
 });
 
-const abadiProBold = localFont({
-  src: "./fonts/AbadiMTPro-Bold.ttf",
-  variable: "--font-abadi-pro-bold",
-});
-
-const candaraBoldItalic = localFont({
-  src: "./fonts/Candara_Bold_Italic.ttf",
-  variable: "--font-candara-bold-italic",
-});
-
 const candaraBold = localFont({
   src: "./fonts/Candara_Bold.ttf",
   variable: "--font-candara-bold",
-});
-
-const candaraItalic = localFont({
-  src: "./fonts/Candara_Italic.ttf",
-  variable: "--font-candara-italic",
-});
-
-const candara = localFont({
-  src: "./fonts/Candara.ttf",
-  variable: "--font-candara",
 });
 
 export const metadata: Metadata = {
@@ -59,9 +38,8 @@ export default function RootLayout({
         <meta name="color-scheme" content="light" />
       </head>
       <body
-        className={`${inter.variable} ${abadiExtraLight.variable} ${abadiProBold.variable} ${candaraBoldItalic.variable} ${candaraBold.variable} ${candaraItalic.variable} ${candara.variable} antialiased relative`}
+        className={`${inter.variable} ${abadiExtraLight.variable} ${candaraBold.variable} antialiased relative`}
       >
-        <Script src="https://cdn.lordicon.com/lordicon.js" strategy="beforeInteractive" />
         <ApolloProvider>
           <RootProvider>
             {children}
