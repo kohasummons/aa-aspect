@@ -19,8 +19,8 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               Contacts Us
             </h3>
-            <p className="text-[#003840] mb-2">+44 (0) 790 812 22811</p>
-            <p className="text-[#003840]">info@aa-aspect.com</p>
+            <p className="text-[#003840] mb-2">+44 7349 351041</p>
+            <p className="text-[#003840]">office@aa-aspect.com</p>
           </div>
 
           {/* Business Hours */}

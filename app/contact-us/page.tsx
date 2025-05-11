@@ -174,11 +174,11 @@ export default function Contact() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
                       <MdPhone className="text-2xl text-[#003840]" />
-                      <span className="font-abadi-extralight">+44 (0) 790 812 22811</span>
+                      <span className="font-abadi-extralight">+44 7349 351 041</span>
                     </div>
                     <div className="flex items-center space-x-4">
                       <MdEmail className="text-2xl text-[#003840]" />
-                      <span className="font-abadi-extralight">info@aa-aspect.com</span>
+                      <span className="font-abadi-extralight">office@aa-aspect.com</span>
                     </div>
                     
                   </div>
