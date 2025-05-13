@@ -21,7 +21,7 @@ function useMediaQuery(query: string) {
 
 export function InfiniteScrollSection() {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const scrollSpeed = isMobile ? 10 : 12; // Twice as fast on mobile
+  const scrollSpeed = isMobile ? 10 : 12;
   
   const scrollItem = (
     <div className="flex items-center flex-nowrap md:gap-20 gap-8">
