@@ -15,24 +15,29 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What services does aa aspect provide?",
+    question: "What industries do you serve?",
     answer:
-      "aa aspect specializes in project management, process management, quality management, and FMEA coaching services. We offer tailored solutions to help businesses streamline their operations and achieve their goals efficiently.",
+      "We cater to a wide range of sectors including engineering, construction, oil and gas, manufacturing, and industrial services, offering documentation and consulting support that ensures operational excellence and compliance.",
   },
   {
-    question: "How does aa aspect ensure project success?",
+    question: "How does your company ensure quality assurance?",
     answer:
-      "We employ a comprehensive approach combining experienced professionals, proven methodologies, and cutting-edge tools. Our team maintains constant communication and provides regular updates to ensure transparency and timely delivery.",
+      "Our Quality Assurance (QA) process is guided by international standards and best practices. We implement rigorous inspection, verification, and documentation protocols to guarantee that every deliverable meets or exceeds client and regulatory requirements.",
   },
   {
-    question: "Can aa aspect work with businesses of any size?",
+    question: "How does your company tackle engineering technicalities",
     answer:
-      "Yes, we work with businesses of all sizes, from startups to large enterprises. Our solutions are scalable and customized to meet the specific needs and requirements of each client.",
+      "We approach engineering technicalities with precision, insight, and innovation – breaking down complex challenges into practical, effective solutions through rigorous analysis and expert collaboration.",
   },
   {
-    question: "What makes aa aspect different from other consulting firms?",
+    question: "How can I request a service or project quote?",
     answer:
-      "Our unique combination of industry expertise, innovative approaches, and commitment to client success sets us apart. We focus on building long-term partnerships and delivering measurable results rather than just short-term solutions.",
+      "You can reach out to our team through our Contact page or send an inquiry via email. Once we receive your request, our specialists will review your project requirements and provide a detailed proposal or quotation.",
+  },
+  {
+    question: "What sets your company apart?",
+    answer:
+      "Our commitment to precision, expertise, and client satisfaction distinguishes us. With a multidisciplinary team and a reputation for reliability, we combine technical excellence with strategic insight to deliver superior value and lasting partnerships.",
   },
 ];
 
@@ -58,9 +63,8 @@ const FAQAccordion = ({
           {question}
         </span>
         <span
-          className={`ml-6 flex-shrink-0 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`ml-6 flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+            }`}
         >
           <svg
             className="h-6 w-6 text-[#003840]"
@@ -136,7 +140,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="mt-3 max-w-2xl mx-auto text-xl text-white/90 sm:mt-4 font-abadi-extralight"
               >
-                Transforming the way professionals connect and collaborate
+                Innovating at the Intersection of Engineering and Technology
               </motion.p>
             </div>
           </div>
@@ -163,29 +167,19 @@ export default function About() {
                     About Us
                   </h2>
                   <p className="mt-4 text-lg text-gray-600 font-abadi-extralight">
-                    Unlock the full potential of your business with our expertly
-                    crafted solutions tailored to meet your unique needs. With
-                    over 20 years of industry experience, our team of seasoned
-                    professionals specializes in IT, product development,
-                    automotive, and logistics and supply chain management.{" "}
+                    With over two decades of proven industry experience, we deliver strategic, high-impact technical solutions across
+                    diverse sectors. Our expertise spans Project Engineering, Technical Documentation, Industrial piping processes,
+                    Quality Engineering and Process Engineering — all aimed at achieving flawless execution and lasting value.{" "}
                     <br /><br />
-                    At the heart of our service is a commitment to strategic
-                    thinking and dynamic problem-solving. We understand that no
-                    two challenges are alike, which is why we take pride in our
-                    agile approach. From initial consultation to project
-                    completion, we customize our strategies to align perfectly
-                    with your objectives, ensuring that we not only meet but
-                    exceed your expectations. <br /> <br />
-                    Our dedication to excellence is evident in every phase of
-                    the project — from brainstorming innovative ideas to
-                    executing flawless implementations. Trust in a partnership
-                    where your goals are our priority, and witness how our
-                    tailored services can drive success and efficiency within
-                    your organization. <br />
-                    Choose our experienced team for a collaborative experience
-                    where dedication meets expertise. Let us help you navigate
-                    the complexities of your industry and achieve remarkable
-                    results together!
+                    Our team of seasoned professionals combines deep technical knowledge with engineering expertise and strategic
+                    foresight, helping industries achieve operational efficiency, drive innovation, and sustain growth.
+                    At the heart of our operations is a commitment to engineering precision, technical excellence, and genuine
+                    partnership. <br /> <br />
+                    Recognizing that every client’s goals are unique, we adopt an agile, customized approach — from
+                    initial consultation to seamless implementation — ensuring our solutions align perfectly with your objectives.
+                    We bring excellence to every project. Experience a partnership grounded in technical and engineering expertise,
+                    strategic execution, and a shared goal of enduring success <br />
+
                   </p>
                 </div>
               </div>
@@ -197,14 +191,11 @@ export default function About() {
                     Our Strength
                   </h2>
                   <p className="mt-4 text-lg text-gray-600 font-abadi-extralight">
-                    We believe that your success is our success. That's why we
-                    take the time to understand your unique goals and
-                    aspirations. By fostering a collaborative environment, we
-                    tailor our strategies to meet your specific needs. Whether
-                    you're seeking guidance in leadership development, strategic
-                    planning, or personal growth, our consultants are here to
-                    equip you with the tools and knowledge necessary to navigate
-                    your journey.
+                    At the core of our ethos lies a simple principle, your success defines ours. We take pride in a strategic,
+                    partnership-driven approach, investing the time to understand your unique goals and long-term visions.
+                    Through a strategic, partnership-driven approach , we apply technical and engineering expertise to craft
+                    tailored solutions that drive measurable impact. When navigating industrial growth, technical
+                    advancement our team equips you to achieve lasting success.
                   </p>
                 </div>
                 <div className="relative">
@@ -234,19 +225,19 @@ export default function About() {
               <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
                 {[
                   {
-                    title: "Trust",
-                    description:
-                      "Building reliable connections between professionals and businesses",
-                  },
-                  {
                     title: "Innovation",
                     description:
-                      "Constantly evolving to meet the needs of modern work",
+                      "We embrace creativity and forward thinking, continuously evolving our methods to unlock smarter, more efficient, and future-ready solutions.",
                   },
                   {
-                    title: "Community",
+                    title: "Integrity",
                     description:
-                      "Fostering a supportive network of skilled professionals",
+                      "Transparency, accountability, and respect define every decision we make ensuring lasting trust with our clients and partners.",
+                  },
+                  {
+                    title: "Technical intricacy",
+                    description:
+                      "We don’t just deliver results, we equip our clients with the knowledge, tools, and confidence to sustain and scale success.",
                   },
                 ].map((value, index) => (
                   <motion.div

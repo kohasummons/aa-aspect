@@ -201,19 +201,19 @@ const ServiceTemplate = ({ title, description, image, features, benefits, backgr
             className="max-w-4xl mx-auto text-center px-4"
           >
             <h2 className="text-4xl md:text-5xl font-candara-bold text-white mb-8">
-              {title === "Quality Management" ? "Dedicated Commitment to Excellence" 
-                : title === "Project and Product Management" ? "Streamline Your Project Execution"
-                : title === "Process Management" ? "Optimize Your Business Processes"
-                : title === "FMEA Coaching" ? "Transform Your Risk Management"
-                : "Transform Your Risk Management"
+              {title === "QUALITY ENGINEERING" ? "Dedicated Commitment to Excellence" 
+                : title === "PROJECT ENGINEERING" ? "Streamline Your Project Execution"
+                : title === "PROCESS ENGINEERING" ? "Optimize Your Business Processes"
+                : title === "TECHNICAL DOCUMENTATION" ? "Deliver Precision from Start to Finish"
+                : "Transform Your Operations"
               }
             </h2>
             <p className="text-lg md:text-xl text-white/90 font-abadi-regular mb-12">
-              {title === "Quality Management" ? "Elevate your business's performance and ensure excellence at every level with AA Aspect's comprehensive suite of quality management services."
-                : title === "Project and Product Management" ? "By seamlessly blending traditional project and product management principles with bespoke solutions, we customize our methods to align perfectly with your specific requirements."
-                : title === "Process Management" ? "With years of hands-on experience, we partner with you to identify bottlenecks, streamline operations, and cultivate a robust infrastructure that positions your business for long-term success."
-                : title === "FMEA Coaching" ? "Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence.."
-                : "Ready to unlock the power of FMEA and transform your risk management approach? Let us help you build a culture of proactive risk mitigation and achieve operational excellence." /* Default/Risk Management */
+              {title === "QUALITY ENGINEERING" ? "Elevate your business's performance and ensure excellence at every level with AA Aspect's comprehensive suite of quality engineering services."
+                : title === "PROJECT ENGINEERING" ? "By seamlessly blending traditional project engineering principles with bespoke solutions, we customize our methods to align perfectly with your specific requirements."
+                : title === "PROCESS ENGINEERING" ? "With years of hands-on experience, we partner with you to identify bottlenecks, streamline operations, and cultivate a robust infrastructure that positions your business for long-term success."
+                : title === "TECHNICAL DOCUMENTATION" ? "Ready to enhance your technical documentation? Let us help you build comprehensive, accurate documentation that ensures transparency, reliability, and full process traceability."
+                : "Ready to transform your operations? Let us help you achieve operational excellence and lasting success."
               }
             </p>
             <Link 

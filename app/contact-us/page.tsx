@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { MdPhone, MdEmail } from 'react-icons/md';
+import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import CtaSection from '../components/sections/CtaSection';
 
 export default function Contact() {
@@ -180,7 +181,48 @@ export default function Contact() {
                       <MdEmail className="text-2xl text-[#003840]" />
                       <span className="font-abadi-extralight">office@aa-aspect.com</span>
                     </div>
-                    
+                  </div>
+                </div>
+
+                <div className='mt-12'>
+                  <h2 className="text-2xl font-candara-bold text-[#003840] mb-3">Follow Us</h2>
+                  <div className="space-y-4">
+                    <a 
+                      href="https://www.linkedin.com/company/aa-aspect-limited" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-4 hover:text-teal-600 transition-colors"
+                    >
+                      <FaLinkedin className="text-2xl text-[#003840]" />
+                      <span className="font-abadi-extralight">Linkedin</span>
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/aa_aspect" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-4 hover:text-teal-600 transition-colors"
+                    >
+                      <FaInstagram className="text-2xl text-[#003840]" />
+                      <span className="font-abadi-extralight">Instagram</span>
+                    </a>
+                    <a 
+                      href="https://www.facebook.com/AaAspectLimited" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-4 hover:text-teal-600 transition-colors"
+                    >
+                      <FaFacebook className="text-2xl text-[#003840]" />
+                      <span className="font-abadi-extralight">Facebook</span>
+                    </a>
+                    <a 
+                      href="https://twitter.com/aa_aspectltd" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-4 hover:text-teal-600 transition-colors"
+                    >
+                      <FaTwitter className="text-2xl text-[#003840]" />
+                      <span className="font-abadi-extralight">Twitter</span>
+                    </a>
                   </div>
                 </div>
 

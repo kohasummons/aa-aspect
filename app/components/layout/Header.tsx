@@ -131,44 +131,44 @@ export function Header() {
               >
                 <div className="pt-4 pl-4 space-y-4">
                   <Link
-                    href="/services/project-management"
+                    href="/services/quality-engineering"
                     className="block text-white text-lg hover:text-teal-400 transition-colors"
                     onClick={() => {
                       setIsMobileServicesOpen(false);
                       setIsMenuOpen(false);
                     }}
                   >
-                    Project & Product
+                    QUALITY ENGINEERING
                   </Link>
                   <Link
-                    href="/services/process-management"
+                    href="/services/project-engineering"
                     className="block text-white text-lg hover:text-teal-400 transition-colors"
                     onClick={() => {
                       setIsMobileServicesOpen(false);
                       setIsMenuOpen(false);
                     }}
                   >
-                    Process Management
+                    PROJECT ENGINEERING
                   </Link>
                   <Link
-                    href="/services/quality-management"
+                    href="/services/process-engineering"
                     className="block text-white text-lg hover:text-teal-400 transition-colors"
                     onClick={() => {
                       setIsMobileServicesOpen(false);
                       setIsMenuOpen(false);
                     }}
                   >
-                    Quality
+                    PROCESS ENGINEERING
                   </Link>
                   <Link
-                    href="/services/fmea-coaching"
+                    href="/services/technical-documentation"
                     className="block text-white text-lg hover:text-teal-400 transition-colors"
                     onClick={() => {
                       setIsMobileServicesOpen(false);
                       setIsMenuOpen(false);
                     }}
                   >
-                    FMEA Coaching
+                    TECHNICAL DOCUMENTATION
                   </Link>
                 </div>
               </motion.div>
@@ -248,32 +248,32 @@ export function Header() {
                 className="absolute top-full left-0 mt-2 w-64 bg-[#003840] rounded-md shadow-lg py-2"
               >
                   <Link
-                  href="/services/quality-management"
+                  href="/services/quality-engineering"
                   className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
                   onClick={() => setIsServicesOpen(false)}
                 >
-                  Quality
+                  QUALITY ENGINEERING
                 </Link>
                 <Link
-                  href="/services/project-management"
+                  href="/services/project-engineering"
                   className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
                   onClick={() => setIsServicesOpen(false)}
                 >
-                  Project & Product
+                  PROJECT ENGINEERING
                 </Link>
                 <Link
-                  href="/services/process-management"
+                  href="/services/process-engineering"
                   className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
                   onClick={() => setIsServicesOpen(false)}
                 >
-                  Process Management
+                  PROCESS ENGINEERING
                 </Link>
                 <Link
-                  href="/services/fmea-coaching"
+                  href="/services/technical-documentation"
                   className="block px-4 py-2 text-white hover:bg-teal-700 transition-colors"
                   onClick={() => setIsServicesOpen(false)}
                 >
-                  FMEA Coaching
+                  TECHNICAL DOCUMENTATION
                 </Link>
               </motion.div>
             )}

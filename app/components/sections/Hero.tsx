@@ -29,10 +29,11 @@ export function Hero() {
           style={{ y: y1, opacity }}
           className="text-center text-xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl mb-4 md:mb-6 font-candara-bold max-w-[90%] md:max-w-[80%] lg:max-w-[70%]"
         >
-         DEVELOPING COLLABORATIVE INNOVATION
+         CHAMPIONING TECHNOLOGICAL ADVANCEMENTS
         </motion.div>
         <motion.div className="text-center text-sm sm:text-base md:text-lg text-white/70 mx-auto w-[95%] sm:w-[85%] md:w-[70%] lg:w-[50%] xl:w-[40%] leading-relaxed">
-        We deliver exceptional projects to outstanding clients, ensuring every aspect is flawlessly executed.
+        We deliver precision-engineered technology and engineering solutions to world-class clients, ensuring every detail
+        is executed with technical mastery and uncompromising excellence
          </motion.div>
         <div className="flex justify-center mt-6 sm:mt-8 md:mt-12 lg:mt-16">
           <Link href="/contact-us" className="button-85 px-6 sm:px-8 py-3 sm:py-4 bg-[#003840] text-white cursor-pointer rounded-full after:rounded-full before:rounded-full relative group transition-all duration-300 scale-100 hover:scale-105 text-sm sm:text-base">
