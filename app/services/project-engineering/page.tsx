@@ -1,5 +1,5 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
-import productmang1 from "@/public/images/productmang1.png";
+import productmang1 from "@/public/images/new6.jpg";
 
 export default function ProjectEngineering() {
   return (

@@ -21,7 +21,7 @@ export function Hero() {
       ref={sectionRef} 
       className="text-white h-full md:min-h-[calc(100dvh-80px)] relative flex flex-col pb-30"
     >
-      <div className="absolute bg-[url(/images/hero-image-2.jpg)] bg-cover bg-center top-0 bottom-0 inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-70" />
+      <div className="absolute bg-[url(/images/homepagehero.jpg)] bg-cover bg-center top-0 bottom-0 inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-70" />
 
       <div className="container mx-auto relative flex-1 flex flex-col items-center px-4 pt-[10vh] sm:pt-[15vh] md:pt-[20vh] md:px-6">
         <motion.div

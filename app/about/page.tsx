@@ -122,7 +122,7 @@ export default function About() {
       <div className="min-h-screen relative overflow-hidden">
         {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center">
-          <div className="absolute inset-0 bg-[url(/images/about1.png)] bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
+          <div className="absolute inset-0 bg-[url(/images/new2.jpg)] bg-cover bg-center bg-no-repeat before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-60" />
 
           <div className="relative z-10 w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -154,7 +154,7 @@ export default function About() {
                 <div className="relative">
                   <div className="aspect-w-16 aspect-h-9">
                     <Image
-                      src="/images/about2.png"
+                      src="/images/new3.jpg"
                       alt="Team collaboration"
                       fill
                       className="object-cover rounded-lg shadow-lg"
@@ -201,7 +201,7 @@ export default function About() {
                 <div className="relative">
                   <div className="aspect-w-16 aspect-h-9">
                     <Image
-                      src="/images/strength.png"
+                      src="/images/new8.jpg"
                       alt="Team collaboration"
                       fill
                       className="object-cover rounded-lg shadow-lg"

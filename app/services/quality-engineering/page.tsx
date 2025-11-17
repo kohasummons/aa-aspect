@@ -1,5 +1,5 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
-import qualitymgt1 from "@/public/images/processmgt5.png";
+import qualitymgt1 from "@/public/images/new10.jpg";
 
 export default function QualityEngineering() {
   return (

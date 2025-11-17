@@ -1,5 +1,5 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
-import processmgt1 from "@/public/images/processmgt6.png";
+import processmgt1 from "@/public/images/new15.jpg";
 
 export default function ProcessEngineering() {
   return (

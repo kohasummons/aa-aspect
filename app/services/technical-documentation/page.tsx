@@ -1,5 +1,5 @@
 import ServiceTemplate from "@/app/components/ui/ServiceTemplate";
-import fmea1 from "@/public/images/processmgt3.png";
+import fmea1 from "@/public/images/new16.jpg";
 
 export default function TechnicalDocumentation() {
   return (
