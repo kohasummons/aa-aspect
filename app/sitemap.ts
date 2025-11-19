@@ -2,14 +2,7 @@ import { MetadataRoute } from 'next'
 import { client } from '@/lib/graphql/client'
 import { GET_POSTS } from '@/lib/graphql/queries/posts'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Get news posts
-  const { data } = await client.query({
-    query: GET_POSTS,
-    variables: { first: 100 }
-  });
-  
-  const routes = [
+const baseRoutes = [
     {
       url: 'https://aa-aspect.com',
       lastModified: new Date(),
@@ -60,13 +53,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ] as const;
 
-  // Add dynamic news post routes
-  const newsRoutes = (data?.posts?.nodes || []).map((post: { slug: string; date: string }) => ({
-    url: `https://aa-aspect.com/news/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }));
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  let newsRoutes: MetadataRoute.Sitemap = [];
 
-  return [...routes, ...newsRoutes];
+  try {
+    const { data } = await client.query({
+      query: GET_POSTS,
+      variables: { first: 100 },
+      context: {
+        fetchOptions: {
+          next: { revalidate: 3600 },
+        },
+      },
+    });
+
+    newsRoutes =
+      (data?.posts?.nodes || []).map((post: { slug: string; date: string }) => ({
+        url: `https://aa-aspect.com/news/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      })) ?? [];
+  } catch {
+    newsRoutes = [];
+  }
+
+  return [...baseRoutes, ...newsRoutes];
 } 
