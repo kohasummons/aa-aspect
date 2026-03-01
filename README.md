@@ -1,3 +1,3 @@
 AA ASPECT - 🪢 
 
-v4.1
+v4.2
