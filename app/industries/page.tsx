@@ -75,7 +75,7 @@ export default function IndustriesPage() {
 
       {/* Sector Blocks */}
       <section className="bg-black">
-        {sectors.map((sector, index) => (
+        {sectors.map((sector) => (
           <motion.div
             key={sector.id}
             id={sector.id}

@@ -2,7 +2,6 @@
 
 import { Header } from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import CtaSection from "../components/sections/CtaSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
