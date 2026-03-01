@@ -30,10 +30,10 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'aa aspect Limited | Your Innovative Solution Partner',
-    template: '%s | aa aspect Limited'
+    default: 'AA-Aspect | Piping QA/QC & Documentation Support',
+    template: '%s | AA-Aspect'
   },
-  description: 'Dedicated to delivering innovative solutions that streamline processes, enhance productivity, and drive sustainable growth',
+  description: 'QA/QC and documentation support for piping and mechanical utility systems. Serving EPC, MEP, and mechanical contractors across the UK and Europe.',
   metadataBase: new URL('https://aa-aspect.com'),
   alternates: {
     canonical: '/',
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'aa aspect Limited | Your Innovative Solution Partner',
-    description: 'Dedicated to delivering innovative solutions that streamline processes, enhance productivity, and drive sustainable growth',
+    title: 'AA-Aspect | Piping QA/QC & Documentation Support',
+    description: 'QA/QC and documentation support for piping and mechanical utility systems. Serving EPC, MEP, and mechanical contractors across the UK and Europe.',
     url: 'https://aa-aspect.com',
-    siteName: 'aa aspect Limited',
+    siteName: 'AA-Aspect',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -61,22 +61,22 @@ export const metadata: Metadata = {
         url: 'https://aa-aspect.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'aa aspect Limited'
+        alt: 'AA-Aspect'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'aa aspect Limited | Your Innovative Solution Partner',
-    description: 'Dedicated to delivering innovative solutions that streamline processes, enhance productivity, and drive sustainable growth',
+    title: 'AA-Aspect | Piping QA/QC & Documentation Support',
+    description: 'QA/QC and documentation support for piping and mechanical utility systems. Serving EPC, MEP, and mechanical contractors across the UK and Europe.',
     images: ['https://aa-aspect.com/twitter-image.jpg']
   },
   verification: {
     google: 'your-google-verification-code',
   },
-  keywords: ['consulting', 'project management', 'process management', 'quality management', 'FMEA coaching'],
-  authors: [{ name: 'aa aspect Limited' }],
-  category: 'Business Consulting',
+  keywords: ['piping QA/QC', 'test pack management', 'mechanical completion', 'commissioning support', 'turnover documentation', 'document control', 'EPC support', 'piping inspection'],
+  authors: [{ name: 'AA-Aspect' }],
+  category: 'Engineering Services',
 };
 
 export default function RootLayout({
@@ -87,7 +87,7 @@ export default function RootLayout({
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'aa aspect Limited',
+    name: 'AA-Aspect',
     url: 'https://aa-aspect.com',
     logo: 'https://aa-aspect.com/logo.png',
     sameAs: [

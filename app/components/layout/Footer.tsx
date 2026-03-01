@@ -3,14 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
-import FadedElementSVG from "../../../public/images/faded-element.svg";
-
 const Footer = () => {
   return (
     <footer className="bg-white pt-10 md:pt-20 pb-6 md:pb-10 relative overflow-hidden px-4 md:px-6">
       {/* Background pattern */}
       <div className="absolute right-0 top-0 opacity-40">
-        <Image src={FadedElementSVG} alt="background effect" />
+        <Image src="/images/faded-element.svg" alt="" width={600} height={600} />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -18,7 +16,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
-              Contacts Us
+              Contact
             </h3>
             <p className="text-[#003840] mb-2">+44 7349 351041</p>
             <p className="text-[#003840]">office@aa-aspect.com</p>
