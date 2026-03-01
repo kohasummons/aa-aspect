@@ -1,31 +1,19 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'About Us | aa aspect Limited',
-  description: 'Learn about aa aspect Limited - your partner in IT, product development, automotive, and logistics solutions with over 20 years of industry experience.',
+  title: "About | AA-Aspect",
+  description:
+    "AA-Aspect is a piping QA/QC and documentation support company based in Ipswich, UK. We work with EPC, MEP, and mechanical contractors on data centre, life science, and industrial projects.",
   alternates: {
-    canonical: '/about',
+    canonical: "/about",
   },
   openGraph: {
-    title: 'About Us | aa aspect Limited',
-    description: 'Learn about aa aspect Limited - your partner in IT, product development, automotive, and logistics solutions with over 20 years of industry experience.',
-    url: 'https://aa-aspect.com/about',
-    type: 'website',
-    images: [
-      {
-        url: 'https://aa-aspect.com/images/about-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'About aa aspect Limited'
-      }
-    ]
+    title: "About | AA-Aspect",
+    description:
+      "Piping QA/QC and documentation support. We integrate into your team and deliver from day one.",
+    url: "https://aa-aspect.com/about",
+    type: "website",
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About Us | aa aspect Limited',
-    description: 'Learn about aa aspect Limited - your partner in IT, product development, automotive, and logistics solutions with over 20 years of industry experience.',
-    images: ['https://aa-aspect.com/images/about-twitter.jpg']
-  }
 };
 
 export default function AboutLayout({
@@ -34,4 +22,4 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return children;
-} 
+}

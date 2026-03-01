@@ -6,39 +6,54 @@ import { useRef } from "react";
 
 export function Hero() {
   const sectionRef = useRef(null);
-  const textRef1 = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
-    <section 
-      ref={sectionRef} 
-      className="text-white h-full md:min-h-[calc(100dvh-80px)] relative flex flex-col pb-30"
+    <section
+      ref={sectionRef}
+      className="text-white min-h-[100dvh] relative flex flex-col justify-center"
     >
-      <div className="absolute bg-[url(/images/homepagehero.jpg)] bg-cover bg-center top-0 bottom-0 inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-70" />
+      <div className="absolute bg-[url(/images/hero-industrial-piping.jpg)] bg-cover bg-center inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black before:opacity-70" />
 
-      <div className="container mx-auto relative flex-1 flex flex-col items-center px-4 pt-[10vh] sm:pt-[15vh] md:pt-[20vh] md:px-6">
-        <motion.div
-          ref={textRef1}
+      <div className="container mx-auto relative z-10 flex flex-col items-center px-4 md:px-6">
+        <motion.h1
           style={{ y: y1, opacity }}
-          className="text-center text-xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl mb-4 md:mb-6 font-candara-bold max-w-[90%] md:max-w-[80%] lg:max-w-[70%]"
+          className="text-center text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 md:mb-6 font-candara-bold max-w-5xl leading-tight"
         >
-         CHAMPIONING TECHNOLOGICAL ADVANCEMENTS
-        </motion.div>
-        <motion.div className="text-center text-sm sm:text-base md:text-lg text-white/70 mx-auto w-[95%] sm:w-[85%] md:w-[70%] lg:w-[50%] xl:w-[40%] leading-relaxed">
-        We deliver precision-engineered technology and engineering solutions to world-class clients, ensuring every detail
-        is executed with technical mastery and uncompromising excellence
-         </motion.div>
-        <div className="flex justify-center mt-6 sm:mt-8 md:mt-12 lg:mt-16">
-          <Link href="/contact-us" className="button-85 px-6 sm:px-8 py-3 sm:py-4 bg-[#003840] text-white cursor-pointer rounded-full after:rounded-full before:rounded-full relative group transition-all duration-300 scale-100 hover:scale-105 text-sm sm:text-base">
-            GET IN TOUCH
+          QA/QC &amp; Documentation Support for Piping &amp; Mechanical Utility
+          Systems
+        </motion.h1>
+
+        <motion.p
+          style={{ opacity }}
+          className="text-center text-sm sm:text-base md:text-lg text-white/80 mx-auto max-w-2xl leading-relaxed"
+        >
+          Supporting EPC, MEP, and mechanical contractors through construction,
+          mechanical completion, and commissioning. On-site or remote.
+        </motion.p>
+
+        <div className="flex justify-center mt-8 md:mt-12">
+          <Link
+            href="/request-support"
+            className="button-85 px-8 py-4 bg-[#003840] text-white cursor-pointer rounded-full after:rounded-full before:rounded-full relative group transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+          >
+            Request Project Support
           </Link>
+        </div>
+
+        <div className="flex items-center gap-4 sm:gap-6 mt-16 md:mt-24 text-xs sm:text-sm text-white/60 tracking-wide uppercase">
+          <span>Data Centres</span>
+          <span className="w-px h-4 bg-white/30" />
+          <span>Life Sciences</span>
+          <span className="w-px h-4 bg-white/30" />
+          <span>Industrial Utilities</span>
         </div>
       </div>
     </section>

@@ -1,34 +1,19 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s | aa aspect Limited',
-    default: 'Our Services | aa aspect Limited',
-  },
-  description: 'Explore our comprehensive range of professional services including quality management, FMEA coaching, and more.',
+  title: "Our Services | AA-Aspect",
+  description:
+    "QA/QC and documentation support for EPC, MEP, and mechanical contractors. Piping inspection, test pack management, commissioning support, and remote document control.",
   alternates: {
-    canonical: '/services',
+    canonical: "/services",
   },
   openGraph: {
-    title: 'Professional Services | aa aspect Limited',
-    description: 'Explore our comprehensive range of professional services including quality management, FMEA coaching, and more.',
-    url: 'https://aa-aspect.com/services',
-    type: 'website',
-    images: [
-      {
-        url: 'https://aa-aspect.com/images/services-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'aa aspect Limited Services'
-      }
-    ]
+    title: "Our Services | AA-Aspect",
+    description:
+      "QA/QC and documentation support for EPC, MEP, and mechanical contractors throughout construction, mechanical completion, and commissioning.",
+    url: "https://aa-aspect.com/services",
+    type: "website",
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Professional Services | aa aspect Limited',
-    description: 'Explore our comprehensive range of professional services including quality management, FMEA coaching, and more.',
-    images: ['https://aa-aspect.com/images/services-twitter.jpg']
-  }
 };
 
 export default function ServicesLayout({
@@ -37,4 +22,4 @@ export default function ServicesLayout({
   children: React.ReactNode;
 }) {
   return children;
-} 
+}

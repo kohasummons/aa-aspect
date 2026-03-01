@@ -1,10 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      { source: '/contact', destination: '/request-support', permanent: true },
+      { source: '/contact-us', destination: '/request-support', permanent: true },
+    ]
+  },
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'lightskyblue-frog-475745.hostingersite.com',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'news.aa-aspect.com',
         pathname: '/wp-content/uploads/**',
       },
     ],

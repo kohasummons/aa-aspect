@@ -14,28 +14,36 @@ import {
 
 interface ContactFormEmailProps {
   name: string;
+  company: string;
   email: string;
-  subject: string;
-  message: string;
+  phone?: string;
+  projectLocation?: string;
+  projectType: string;
+  supportRequired: string[];
+  timeline?: string;
+  description?: string;
 }
 
 export const ContactFormEmail = ({
   name,
+  company,
   email,
-  subject,
-  message,
+  phone,
+  projectLocation,
+  projectType,
+  supportRequired,
+  timeline,
+  description,
 }: ContactFormEmailProps) => {
   return (
     <Html>
       <Head />
       <Body style={main}>
-        <Preview>New contact form submission from {name}</Preview>
+        <Preview>New project support request from {name} at {company}</Preview>
         <Container>
           <Section style={logo}>
             <div style={logoContainer}>
-              <span style={logoText}>
-                <h1 className='text-lg font-candara-bold'>aa-aspect</h1>
-              </span>
+              <span style={logoText}>AA-Aspect</span>
             </div>
           </Section>
 
@@ -43,41 +51,54 @@ export const ContactFormEmail = ({
             <Row style={{ ...boxInfos, paddingBottom: '0' }}>
               <Column>
                 <Heading style={heading}>
-                  Hi {name},
+                  New Project Support Request
                 </Heading>
-                <Heading as="h2" style={subheading}>
-                  Thank you for contacting AA Aspect!
-                </Heading>
-
-                <Text style={paragraph}>
-                  We have received your enquiry with the following details:
-                </Text>
 
                 <Text style={{ ...paragraph, marginTop: 20 }}>
-                  <b>Subject: </b>
-                  {subject}
+                  <b>Name: </b>{name}
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
-                  <b>Email: </b>
-                  {email}
+                  <b>Company: </b>{company}
                 </Text>
                 <Text style={{ ...paragraph, marginTop: -5 }}>
-                  <b>Message: </b>
+                  <b>Email: </b>{email}
                 </Text>
-                <Text style={messageBox}>
-                  {message}
+                {phone && (
+                  <Text style={{ ...paragraph, marginTop: -5 }}>
+                    <b>Phone: </b>{phone}
+                  </Text>
+                )}
+                {projectLocation && (
+                  <Text style={{ ...paragraph, marginTop: -5 }}>
+                    <b>Project Location: </b>{projectLocation}
+                  </Text>
+                )}
+                <Text style={{ ...paragraph, marginTop: -5 }}>
+                  <b>Project Type: </b>{projectType}
                 </Text>
-
-                <Text style={paragraph}>
-                  Our team will review your message and get back to you shortly.
+                <Text style={{ ...paragraph, marginTop: -5 }}>
+                  <b>Support Required: </b>{supportRequired.join(', ')}
                 </Text>
+                {timeline && (
+                  <Text style={{ ...paragraph, marginTop: -5 }}>
+                    <b>Timeline / Urgency: </b>{timeline}
+                  </Text>
+                )}
+                {description && (
+                  <>
+                    <Text style={{ ...paragraph, marginTop: 10 }}>
+                      <b>Project Description:</b>
+                    </Text>
+                    <Text style={messageBox}>{description}</Text>
+                  </>
+                )}
               </Column>
             </Row>
-            
+
             <Row style={{ ...boxInfos, paddingTop: '0' }}>
               <Column style={buttonContainer}>
                 <Button style={button} href="https://aa-aspect.com">
-                  Visit Our Website
+                  Visit Website
                 </Button>
               </Column>
             </Row>
@@ -94,9 +115,14 @@ export const ContactFormEmail = ({
 
 ContactFormEmail.PreviewProps = {
   name: 'John Doe',
+  company: 'Acme Construction',
   email: 'john@example.com',
-  subject: 'General Inquiry',
-  message: 'Hello, I would like to learn more about your services.',
+  phone: '+44 7700 900000',
+  projectLocation: 'Dublin, Ireland',
+  projectType: 'Data Centre',
+  supportRequired: ['QA/QC Support', 'Test Pack Management'],
+  timeline: 'Q2 2026',
+  description: 'We need documentation support for a new data centre cooling infrastructure project.',
 } as ContactFormEmailProps;
 
 export default ContactFormEmail;
@@ -132,14 +158,7 @@ const logoText = {
 };
 
 const heading = {
-  fontSize: 32,
-  fontWeight: 'bold',
-  textAlign: 'center' as const,
-  color: '#2d3748',
-};
-
-const subheading = {
-  fontSize: 26,
+  fontSize: 28,
   fontWeight: 'bold',
   textAlign: 'center' as const,
   color: '#2d3748',
@@ -151,7 +170,7 @@ const buttonContainer = {
 };
 
 const button = {
-  backgroundColor: '#0088ff',
+  backgroundColor: '#003840',
   borderRadius: '24px',
   color: '#FFF',
   fontWeight: 'bold',

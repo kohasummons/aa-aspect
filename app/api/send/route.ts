@@ -13,7 +13,17 @@ const RECIPIENTS = [
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, subject, message } = body;
+    const {
+      name,
+      company,
+      email,
+      phone,
+      projectLocation,
+      projectType,
+      supportRequired,
+      timeline,
+      description,
+    } = body;
 
     try {
       await resend.contacts.create({
@@ -26,12 +36,21 @@ export async function POST(request: Request) {
       console.error('Error adding contact to audience:', error);
     }
 
-
     const { error } = await resend.emails.send({
       from: 'AA-Aspect Contact Form <samuel@aa-aspect.com>',
       to: RECIPIENTS,
-      subject: `New Contact Form Submission: ${subject}`,
-      react: ContactFormEmail({ name, email, subject, message }) as React.ReactElement,
+      subject: `New Project Support Request: ${company} — ${projectType}`,
+      react: ContactFormEmail({
+        name,
+        company,
+        email,
+        phone,
+        projectLocation,
+        projectType,
+        supportRequired,
+        timeline,
+        description,
+      }) as React.ReactElement,
       replyTo: email
     });
 

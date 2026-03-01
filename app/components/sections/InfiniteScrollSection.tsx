@@ -22,26 +22,50 @@ function useMediaQuery(query: string) {
 export function InfiniteScrollSection() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const scrollSpeed = isMobile ? 10 : 12;
-  
+
   const scrollItem = (
     <div className="flex items-center flex-nowrap md:gap-20 gap-8">
       <div className="w-[120px] md:w-[200px] h-auto">
-      <Image src="/images/brands/pureway.png" alt="pureway" width={120} height={120}/>
+        <Image
+          src="/images/brands/pureway.png"
+          alt="Pureways"
+          width={120}
+          height={120}
+        />
       </div>
-      <div className="w-[150px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">TECNODEV LTD</div>
+      <div className="w-[150px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">
+        TECNODEV LTD
+      </div>
       <div className="w-[120px] md:w-[200px] h-auto">
-      <Image src="/images/brands/seedventures.png" alt="seed ventures" width={120} height={120}/>
+        <Image
+          src="/images/brands/seedventures.png"
+          alt="Seedventures"
+          width={120}
+          height={120}
+        />
       </div>
-      <div className="w-[120px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">SEALGARD </div>
+      <div className="w-[120px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">
+        SEALGARD
+      </div>
       <div className="w-[120px] md:w-[200px] h-auto">
-      <Image src="/images/brands/jlr.png" alt="Jlr" width={60} height={60}/>
+        <Image
+          src="/images/brands/jlr.png"
+          alt="JLR"
+          width={60}
+          height={60}
+        />
       </div>
-      <div className="w-[150px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">TWINFORDS</div>
+      <div className="w-[150px] md:w-[200px] h-auto font-bold text-white text-lg md:text-xl font-abadi-regular">
+        TWINFORDS
+      </div>
     </div>
   );
 
   return (
-    <div className="w-full bg-[#000000] overflow-hidden md:py-4">
+    <section className="w-full bg-black overflow-hidden py-6 md:py-8">
+      <p className="text-center text-xs sm:text-sm text-white/50 uppercase tracking-wider mb-4 md:mb-6">
+        Trusted by engineering teams across the UK and Europe
+      </p>
       <div className="relative">
         <motion.div
           className="flex items-center gap-8"
@@ -57,13 +81,11 @@ export function InfiniteScrollSection() {
             },
           }}
         >
-          {/* Only need one set of items - the animation will create the infinite effect */}
           {Array(6)
             .fill(scrollItem)
             .map((item, index) => (
               <div key={index}>{item}</div>
             ))}
-          {/* Duplicate set for seamless loop */}
           {Array(6)
             .fill(scrollItem)
             .map((item, index) => (
@@ -71,6 +93,6 @@ export function InfiniteScrollSection() {
             ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
