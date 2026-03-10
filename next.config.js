@@ -4,6 +4,7 @@ const nextConfig = {
     return [
       { source: '/contact', destination: '/request-support', permanent: true },
       { source: '/contact-us', destination: '/request-support', permanent: true },
+      { source: '/our-services', destination: '/services', permanent: true },
     ]
   },
   images: {

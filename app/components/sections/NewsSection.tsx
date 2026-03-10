@@ -95,32 +95,28 @@ const NewsSection = () => {
   if (loading) return (
     <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
       <div className="container mx-auto">
-        <div className="flex items-center justify-center h-40">
-          <div className="text-white">Loading news...</div>
+        <div className="flex items-center gap-6 mb-8 md:mb-12">
+          <div className="h-10 w-32 rounded bg-white/5 animate-pulse" />
+          <div className="h-[3px] bg-white/10 flex-1" />
+        </div>
+        <div className="flex gap-8">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="min-w-[400px]">
+              <div className="h-[200px] rounded bg-white/[0.04] animate-pulse relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
+              </div>
+              <div className="mt-4 space-y-2">
+                <div className="h-3 w-24 rounded bg-white/[0.04] animate-pulse" />
+                <div className="h-5 w-64 rounded bg-white/[0.06] animate-pulse" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 
-  if (error) return (
-    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-center h-40">
-          <div className="text-white">Error loading news. Please try again later.</div>
-        </div>
-      </div>
-    </section>
-  );
-
-  if (!posts.length) return (
-    <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-center h-40">
-          <div className="text-white">No news posts available.</div>
-        </div>
-      </div>
-    </section>
-  );
+  if (error || !posts.length) return null;
 
   return (
     <section className="bg-[#003840] py-10 md:py-20 relative overflow-y-hidden px-4 md:px-6">

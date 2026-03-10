@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: 'AA-Aspect | Piping QA/QC & Documentation Support',
     template: '%s | AA-Aspect'
   },
-  description: 'QA/QC and documentation support for piping and mechanical utility systems. Serving EPC, MEP, and mechanical contractors across the UK and Europe.',
+  description: 'Specialist piping QA/QC and documentation support for EPC, MEP, and mechanical contractors. Data centres, life sciences, and industrial projects. On-site or remote.',
   metadataBase: new URL('https://aa-aspect.com'),
   alternates: {
     canonical: '/',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'AA-Aspect | Piping QA/QC & Documentation Support',
-    description: 'QA/QC and documentation support for piping and mechanical utility systems. Serving EPC, MEP, and mechanical contractors across the UK and Europe.',
+    description: 'Specialist piping QA/QC and documentation support for EPC, MEP, and mechanical contractors. Data centres, life sciences, and industrial projects. On-site or remote.',
     url: 'https://aa-aspect.com',
     siteName: 'AA-Aspect',
     locale: 'en_US',
@@ -68,13 +68,13 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AA-Aspect | Piping QA/QC & Documentation Support',
-    description: 'QA/QC and documentation support for piping and mechanical utility systems. Serving EPC, MEP, and mechanical contractors across the UK and Europe.',
+    description: 'Specialist piping QA/QC and documentation support for EPC, MEP, and mechanical contractors. Data centres, life sciences, and industrial projects. On-site or remote.',
     images: ['https://aa-aspect.com/twitter-image.jpg']
   },
   verification: {
     google: 'your-google-verification-code',
   },
-  keywords: ['piping QA/QC', 'test pack management', 'mechanical completion', 'commissioning support', 'turnover documentation', 'document control', 'EPC support', 'piping inspection'],
+  keywords: ['piping QA/QC', 'data centre commissioning', 'test pack management', 'turnover documentation', 'mechanical completion', 'document control', 'commissioning support', 'piping documentation', 'QA/QC specialist'],
   authors: [{ name: 'AA-Aspect' }],
   category: 'Engineering Services',
 };
@@ -84,21 +84,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'AA-Aspect',
+    alternateName: 'AA-Aspect Limited',
+    url: 'https://aa-aspect.com',
+  };
+
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'AA-Aspect',
+    alternateName: 'AA-Aspect Limited',
     url: 'https://aa-aspect.com',
     logo: 'https://aa-aspect.com/logo.png',
+    description: 'QA/QC and documentation support for piping and mechanical utility systems.',
     sameAs: [
-      'https://linkedin.com/company/aa-aspect',
-      'https://twitter.com/aa_aspect'
+      'https://www.linkedin.com/company/aa-aspect-limited',
+      'https://www.instagram.com/aa_aspect',
+      'https://www.facebook.com/AaAspectLimited',
+      'https://twitter.com/aa_aspectltd'
     ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '50 Princess St.',
+      addressLocality: 'Ipswich',
+      postalCode: 'IP1 1RJ',
+      addressCountry: 'GB'
+    },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-234-567-8900',
+      telephone: '+44-7349-351041',
       contactType: 'customer service',
-      email: 'contact@aa-aspect.com'
+      email: 'office@aa-aspect.com'
     }
   };
 
@@ -106,6 +125,9 @@ export default function RootLayout({
     <html lang="en" style={{ colorScheme: 'light' }}>
       <head>
         <meta name="color-scheme" content="light" />
+        <Script id="website-jsonld" type="application/ld+json">
+          {JSON.stringify(websiteJsonLd)}
+        </Script>
         <Script id="org-jsonld" type="application/ld+json">
           {JSON.stringify(organizationJsonLd)}
         </Script>
