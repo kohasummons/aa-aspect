@@ -30,20 +30,20 @@ export default function PostPage() {
     dateModified: post.modified,
     author: {
       "@type": "Organization",
-      name: "aa aspect Limited",
-      url: "https://aa-aspect.com",
+      name: "AA-Aspect",
+      url: "https://www.aa-aspect.com",
     },
     publisher: {
       "@type": "Organization",
-      name: "aa aspect Limited",
+      name: "AA-Aspect",
       logo: {
         "@type": "ImageObject",
-        url: "https://aa-aspect.com/logo.png",
+        url: "https://www.aa-aspect.com/logo.svg",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://aa-aspect.com/news/${params.slug}`,
+      "@id": `https://www.aa-aspect.com/news/${params.slug}`,
     },
   };
 
@@ -55,19 +55,19 @@ export default function PostPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://aa-aspect.com",
+        item: "https://www.aa-aspect.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "News",
-        item: "https://aa-aspect.com/news",
+        item: "https://www.aa-aspect.com/news",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://aa-aspect.com/news/${params.slug}`,
+        item: `https://www.aa-aspect.com/news/${params.slug}`,
       },
     ],
   };

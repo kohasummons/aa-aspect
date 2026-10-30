@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: '%s | AA-Aspect'
   },
   description: 'Specialist piping QA/QC and documentation support for EPC, MEP, and mechanical contractors. Data centres, life sciences, and industrial projects. On-site or remote.',
-  metadataBase: new URL('https://aa-aspect.com'),
+  metadataBase: new URL('https://www.aa-aspect.com'),
   alternates: {
     canonical: '/',
   },
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AA-Aspect | Piping QA/QC & Documentation Support',
     description: 'Specialist piping QA/QC and documentation support for EPC, MEP, and mechanical contractors. Data centres, life sciences, and industrial projects. On-site or remote.',
-    url: 'https://aa-aspect.com',
+    url: 'https://www.aa-aspect.com',
     siteName: 'AA-Aspect',
-    locale: 'en_US',
+    locale: 'en_GB',
     type: 'website',
     images: [
       {
-        url: 'https://aa-aspect.com/og-image.jpg',
+        url: '/images/hero-industrial-piping.jpg',
         width: 1200,
         height: 630,
         alt: 'AA-Aspect'
@@ -69,10 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AA-Aspect | Piping QA/QC & Documentation Support',
     description: 'Specialist piping QA/QC and documentation support for EPC, MEP, and mechanical contractors. Data centres, life sciences, and industrial projects. On-site or remote.',
-    images: ['https://aa-aspect.com/twitter-image.jpg']
-  },
-  verification: {
-    google: 'your-google-verification-code',
+    images: ['/images/hero-industrial-piping.jpg']
   },
   keywords: ['piping QA/QC', 'data centre commissioning', 'test pack management', 'turnover documentation', 'mechanical completion', 'document control', 'commissioning support', 'piping documentation', 'QA/QC specialist'],
   authors: [{ name: 'AA-Aspect' }],
@@ -89,7 +86,7 @@ export default function RootLayout({
     '@type': 'WebSite',
     name: 'AA-Aspect',
     alternateName: 'AA-Aspect Limited',
-    url: 'https://aa-aspect.com',
+    url: 'https://www.aa-aspect.com',
   };
 
   const organizationJsonLd = {
@@ -97,8 +94,8 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'AA-Aspect',
     alternateName: 'AA-Aspect Limited',
-    url: 'https://aa-aspect.com',
-    logo: 'https://aa-aspect.com/logo.png',
+    url: 'https://www.aa-aspect.com',
+    logo: 'https://www.aa-aspect.com/logo.svg',
     description: 'QA/QC and documentation support for piping and mechanical utility systems.',
     sameAs: [
       'https://www.linkedin.com/company/aa-aspect-limited',
