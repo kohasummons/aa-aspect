@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'News & Insights',
+  title: {
+    default: 'News & Insights',
+    template: '%s | AA-Aspect',
+  },
   description: 'Stay updated with the latest insights, industry trends, and company updates from AA-Aspect.',
   alternates: {
     canonical: '/news',

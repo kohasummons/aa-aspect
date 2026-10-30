@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: {
+    default: "Our Services",
+    template: "%s | AA-Aspect",
+  },
   description:
     "QA/QC and documentation support for EPC, MEP, and mechanical contractors. Piping inspection, test pack management, commissioning support, and remote document control.",
   alternates: {
