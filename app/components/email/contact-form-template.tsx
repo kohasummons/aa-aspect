@@ -105,7 +105,7 @@ export const ContactFormEmail = ({
           </Section>
 
           <Text style={footer}>
-            © {new Date().getFullYear()} | AA-Aspect, 50 Princess St., Ipswich IP1 1RJ, United Kingdom | www.aa-aspect.com
+            © {new Date().getFullYear()} | AA-Aspect, 50 Princes Street, Ipswich IP1 1RJ, United Kingdom | www.aa-aspect.com
           </Text>
         </Container>
       </Body>

@@ -105,11 +105,12 @@ export default function RootLayout({
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '50 Princess St.',
+      streetAddress: '50 Princes Street',
       addressLocality: 'Ipswich',
       postalCode: 'IP1 1RJ',
       addressCountry: 'GB'
     },
+    areaServed: ['Suffolk', 'Norfolk', 'Essex', 'Cambridgeshire', 'London', 'United Kingdom'],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+44-7349-351041',

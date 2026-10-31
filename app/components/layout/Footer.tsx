@@ -36,7 +36,7 @@ const Footer = () => {
             <h3 className="text-lg md:text-xl font-candara-bold text-[#003840] mb-3 md:mb-4">
               Registered Office Address
             </h3>
-            <p className="text-[#003840] mb-2">50 Princess St.</p>
+            <p className="text-[#003840] mb-2">50 Princes Street</p>
             <p className="text-[#003840] mb-2">Ipswich IP1 1RJ</p>
             <p className="text-[#003840]">United Kingdom</p>
           </div>

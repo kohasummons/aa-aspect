@@ -389,7 +389,7 @@ export default function RequestSupportPage() {
 
           {/* Registered Office */}
           <p className="text-white/30 text-xs text-center mt-14">
-            Registered Office: 50 Princess St, Ipswich IP1 1RJ, United Kingdom
+            Registered Office: 50 Princes Street, Ipswich IP1 1RJ, United Kingdom
           </p>
         </div>
       </section>
